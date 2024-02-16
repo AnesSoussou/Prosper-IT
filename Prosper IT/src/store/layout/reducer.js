@@ -28,7 +28,7 @@ const INIT_STATE = {
   layoutType: layoutTypes.VERTICAL,
   layoutModeType: layoutModeTypes.LIGHT,
   layoutWidth: layoutWidthTypes.FLUID,
-  leftSideBarTheme: leftSideBarThemeTypes.DARK,
+  leftSideBarTheme: localStorage.getItem('sidebarTheme') || leftSideBarThemeTypes.LIGHT,
   leftSideBarThemeImage: leftBarThemeImageTypes.NONE,
   leftSideBarType: leftSidebarTypes.DEFAULT,
   topbarTheme: topBarThemeTypes.LIGHT,
@@ -62,11 +62,12 @@ const Layout = (state = INIT_STATE, action) => {
         ...state,
         layoutWidth: action.payload,
       }
-    case CHANGE_SIDEBAR_THEME:
-      return {
-        ...state,
-        leftSideBarTheme: action.payload,
-      }
+      case CHANGE_SIDEBAR_THEME:
+        localStorage.setItem('sidebarTheme', action.payload);
+        return {
+          ...state,
+          leftSideBarTheme: action.payload,
+        }
     case CHANGE_SIDEBAR_THEME_IMAGE:
       return {
         ...state,
