@@ -494,7 +494,7 @@ const Navbar = props => {
                           setcontact(!contact);
                         }}
                       >
-                        {props.t("Contacts")} <div className="arrow-down"></div>
+                        {props.t("Clients")} <div className="arrow-down"></div>
                       </Link>
                       <div
                         className={classname("dropdown-menu", {
@@ -505,7 +505,7 @@ const Navbar = props => {
                           {props.t("User Grid")}
                         </Link>
                         <Link to="/contacts-list" className="dropdown-item">
-                          {props.t("User List")}
+                          {props.t("Client")}
                         </Link>
                         <Link to="/contacts-profile" className="dropdown-item">
                           {props.t("Profile")}

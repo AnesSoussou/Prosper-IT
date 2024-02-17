@@ -57,7 +57,7 @@ import { handleSearchData } from "components/Common/searchFile";
 const Chat = () => {
 
   //meta title
-  document.title = "Messages | Prosper iT";
+  document.title = "Chat | Skote - React Admin & Dashboard Template";
 
   const dispatch = useDispatch();
 
@@ -80,7 +80,7 @@ const Chat = () => {
   const [currentRoomId, setCurrentRoomId] = useState(1);
   // eslint-disable-next-line no-unused-vars
   const currentUser = {
-    name: "Inessa Giordano",
+    name: "Henry Wells",
     isActive: true,
   };
   const [menu1, setMenu1] = useState(false);
@@ -267,19 +267,109 @@ const Chat = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="Messages" />
+          <Breadcrumbs title="Skote" breadcrumbItem="Chat" />
 
           <Row>
             <Col lg="12">
               <div className="d-lg-flex">
                 <div className="chat-leftsidebar me-lg-4">
                   <div >
-                    
+                    <div className="py-4 border-bottom">
+                      <div className="d-flex">
+                        <div className="align-self-center me-3">
+                          <img src={avatar1} className="avatar-xs rounded-circle" alt="" />
+                        </div>
+                        <div className="flex-grow-1">
+                          <h5 className="font-size-15 mt-0 mb-1">
+                            {currentUser.name}
+                          </h5>
+                          <p className="text-muted mb-0">
+                            <i className="mdi mdi-circle text-success align-middle me-2" />
+                            Active
+                          </p>
+                        </div>
 
-                    <div className="chat-leftsidebar-nav position-relative">               
+                        <div>
+                          <Dropdown
+                            isOpen={menu1}
+                            toggle={() => setMenu1(!menu1)}
+                            className="chat-noti-dropdown active"
+                          >
+                            <DropdownToggle
+                              tag="a"
+                              className="btn dropdown-toggle"
+                            >
+                              <i className="bx bx-bell bx-tada"></i>
+                            </DropdownToggle>
+                            <DropdownMenu className="dropdown-menu-end">
+                              <DropdownItem href="#">Action</DropdownItem>
+                              <DropdownItem href="#">Another action</DropdownItem>
+                              <DropdownItem href="#">Something else</DropdownItem>
+                            </DropdownMenu>
+                          </Dropdown>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="search-box chat-search-box py-4">
+                      <div className="position-relative">
+                        <Input
+                          onKeyUp={searchUsers}
+                          id="search-user"
+                          type="text"
+                          className="form-control"
+                          placeholder="Search..."
+                        />
+                        <i className="bx bx-search-alt search-icon" />
+                      </div>
+                    </div>
+
+                    <div className="chat-leftsidebar-nav position-relative">
+                      <Nav pills justified>
+                        <NavItem>
+                          <NavLink
+                            className={classnames({
+                              active: activeTab === "1",
+                            })}
+                            onClick={() => {
+                              toggleTab("1");
+                            }}
+                          >
+                            <i className="bx bx-chat font-size-20 d-sm-none" />
+                            <span className="d-none d-sm-block">Chat</span>
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink
+                            className={classnames({
+                              active: activeTab === "2",
+                            })}
+                            onClick={() => {
+                              toggleTab("2");
+                            }}
+                          >
+                            <i className="bx bx-group font-size-20 d-sm-none" />
+                            <span className="d-none d-sm-block">Groups</span>
+                          </NavLink>
+                        </NavItem>
+                        <NavItem>
+                          <NavLink
+                            className={classnames({
+                              active: activeTab === "3",
+                            })}
+                            onClick={() => {
+                              toggleTab("3");
+                            }}
+                          >
+                            <i className="bx bx-book-content font-size-20 d-sm-none" />
+                            <span className="d-none d-sm-block">Contacts</span>
+                          </NavLink>
+                        </NavItem>
+                      </Nav>
                       <TabContent activeTab={activeTab} className="py-4">
                         <TabPane tabId="1">
                           <div>
+                            <h5 className="font-size-14 mb-3">Recent</h5>
                             <ul className="list-unstyled chat-list" id="recent-list">
                               {
                                 isLoading ? <Spinners setLoading={setLoading} /> :

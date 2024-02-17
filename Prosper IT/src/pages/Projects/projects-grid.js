@@ -23,7 +23,7 @@ import Paginations from "components/Common/Pagination";
 const ProjectsGrid = () => {
 
   //meta title
-  document.title = "Projects Grid | Skote - React Admin & Dashboard Template";
+  document.title = "Mes Dossiers | Prosper iT";
 
   const dispatch = useDispatch();
 
@@ -62,7 +62,7 @@ const ProjectsGrid = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Projects" breadcrumbItem="Projects Grid" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Mes Dossiers" />
 
           <Row>
             {/* Import Cards */}
