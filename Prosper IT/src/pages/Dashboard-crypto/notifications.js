@@ -8,7 +8,7 @@ import SimpleBar from "simplebar-react";
 const Notifications = () => {
   return (
     <React.Fragment>
-      <Col xl="4">
+      <Col className="mb-4">
         <Card>
           <CardBody>
             <h4 className="card-title mb-4">Notifications</h4>

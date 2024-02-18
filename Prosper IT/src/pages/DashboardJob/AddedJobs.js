@@ -9,7 +9,7 @@ import SimpleBar from "simplebar-react";
 const AddedJobs = () => {
     return (
         <React.Fragment>
-            <Col lg={4}>
+            <Col className="mb-4">
                 <Card>
                     <CardBody>
                         <h4 className="card-title mb-4">Recent Added Jobs</h4>

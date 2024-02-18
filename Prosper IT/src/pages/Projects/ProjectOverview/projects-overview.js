@@ -9,15 +9,15 @@ import Breadcrumbs from "components/Common/Breadcrumb";
 
 import { getProjectDetail as onGetProjectDetail } from "store/projects/actions";
 import ProjectDetail from "./projectDetail";
-import TeamMembers from "./teamMembers";
-import OverviewChart from "./overviewChart";
 import { options, series } from "common/data/projects";
 import AttachedFiles from "./attachedFiles";
-import Comments from "./comments";
 
 //redux
 import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from "reselect";
+import Notifications from "pages/Dashboard-crypto/notifications";
+import AddedJobs from "pages/DashboardJob/AddedJobs";
+import ChantBox from "pages/Dashboard-saas/chat-box";
 
 const ProjectsOverview = props => {
 
@@ -66,17 +66,17 @@ const ProjectsOverview = props => {
                 </Col>
               </Row>
 
-              <Row>
+              <Row >
                 <Col lg="4">
-                  <OverviewChart options={options} series={series} />
+                  <Notifications options={options} series={series} />
                 </Col>
 
                 <Col lg="4">
-                  <TeamMembers team={projectDetail.team} />
+                  <AddedJobs team={projectDetail.team} />
                 </Col>
 
                 <Col lg="4">
-                  <Comments comments={projectDetail.comments} />
+                  <ChantBox comments={projectDetail.comments} />
                 </Col>
               </Row>
             </>
