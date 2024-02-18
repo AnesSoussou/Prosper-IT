@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 
 // Pages Component
 import Chat from "../pages/Chat/Chat";
+import Prosper from "../pages/Chat/Prosper";
 
 // File Manager
 import FileManager from "../pages/FileManager/index";
@@ -188,6 +189,9 @@ const authProtectedRoutes = [
 
   //chat
   { path: "/chat", component: <Chat /> },
+
+  //Prosper
+  { path: "/Prosper", component: <Prosper /> },
 
   //File Manager
   { path: "/apps-filemanager", component: <FileManager /> },
