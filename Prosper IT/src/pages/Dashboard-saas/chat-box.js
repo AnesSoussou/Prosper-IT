@@ -87,7 +87,7 @@ const ChantBox = () => {
   }
   return (
     <React.Fragment>
-      <Col xl="4">
+      <Col className="mb-4">
         <Card>
           <CardBody className="border-bottom">
             <Row>
