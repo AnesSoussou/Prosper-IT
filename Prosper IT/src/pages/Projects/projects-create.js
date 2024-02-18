@@ -210,7 +210,7 @@ const ProjectsCreate = () => {
                       ) : null}
                     </div>
                     <div>
-                      <Label>Attached Files</Label>
+                      <Label>Documents</Label>
                       <Dropzone
                         onDrop={(acceptedFiles) => {
                           handleAcceptedFiles(acceptedFiles);

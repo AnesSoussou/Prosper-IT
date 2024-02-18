@@ -22,7 +22,7 @@ import { createSelector } from "reselect";
 const ProjectsOverview = props => {
 
   //meta title
-  document.title = "Project Overview | Skote - React Admin & Dashboard Template";
+  document.title = "Détails dossier | Prosper iT";
 
   const dispatch = useDispatch();
 
@@ -52,7 +52,7 @@ const ProjectsOverview = props => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Projects" breadcrumbItem="Project Overview" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Détails dossier" />
 
           {!isEmpty(projectDetail) && (
             <>
@@ -62,7 +62,7 @@ const ProjectsOverview = props => {
                 </Col>
 
                 <Col lg="4">
-                  <TeamMembers team={projectDetail.team} />
+                 <AttachedFiles files={projectDetail.files} />
                 </Col>
               </Row>
 
@@ -72,7 +72,7 @@ const ProjectsOverview = props => {
                 </Col>
 
                 <Col lg="4">
-                  <AttachedFiles files={projectDetail.files} />
+                  <TeamMembers team={projectDetail.team} />
                 </Col>
 
                 <Col lg="4">

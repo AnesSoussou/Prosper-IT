@@ -33,7 +33,7 @@ import { getUserProfile } from "store/actions";
 const ContactsProfile = props => {
 
   //meta title
-  document.title = "Profile | Skote - React Admin & Dashboard Template";
+  document.title = "Profile | Prosper iT";
 
   const { userProfile, onGetUserProfile } = props;
 
@@ -93,7 +93,7 @@ const ContactsProfile = props => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Contacts" breadcrumbItem="Profile" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Profile" />
 
           <Row>
             <Col xl="4">

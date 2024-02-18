@@ -66,7 +66,7 @@ const ProjectStatus = ({ status }) => {
 const ProjectsList = () => {
 
   //meta title
-  document.title = "Project List | Skote - React Admin & Dashboard Template";
+  document.title = "Dossiers | Prosper iT";
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -215,7 +215,7 @@ const ProjectsList = () => {
         enableSorting: true,
       },
       {
-        header: 'Projects',
+        header: 'Services',
         accessorKey: 'description',
         enableColumnFilter: false,
         enableSorting: true,
@@ -231,7 +231,7 @@ const ProjectsList = () => {
         }
       },
       {
-        header: 'Due Date',
+        header: 'Création',
         accessorKey: 'dueDate',
         enableColumnFilter: false,
         enableSorting: true,
@@ -330,7 +330,7 @@ const ProjectsList = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Projects" breadcrumbItem="Projects List" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Dossiers" />
 
           {
             isLoading ? <Spinners setLoading={setLoading} /> :
@@ -341,14 +341,10 @@ const ProjectsList = () => {
                       <TableContainer
                         columns={columns}
                         data={projectData}
-                        isGlobalFilter={true}
-                        isAddButton={true}
+
+
                         isPagination={true}
-                        isCustomPageSize={true}
-                        handleUserClick={handleProjectClicks}
-                        SearchPlaceholder="9 records..."
-                        buttonClass="btn btn-success btn-rounded"
-                        buttonName=" Add New Project"
+
                         tableClass="project-list-table align-middle table-nowrap dt-responsive nowrap w-100 table-borderless dataTable no-footer dtr-inline"
                         theadClass="table-light"
                         paginationWrapper="dataTables_paginate paging_simple_numbers pagination-rounded"

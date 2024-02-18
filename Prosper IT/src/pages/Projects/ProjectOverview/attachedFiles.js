@@ -7,7 +7,7 @@ const AttachedFiles = ({ files }) => {
   return (
     <Card>
       <CardBody>
-        <CardTitle className="mb-4">Attached Files</CardTitle>
+        <CardTitle className="mb-4">Documents</CardTitle>
         <div className="table-responsive">
           <Table className="table-nowrap align-middle table-hover mb-0">
             <tbody>

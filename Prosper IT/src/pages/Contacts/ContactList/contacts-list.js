@@ -280,7 +280,7 @@ const ContactsList = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Contacts" breadcrumbItem="User List" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="User List" />
           <Row>
             {
               isLoading ? <Spinners setLoading={setLoading} />
