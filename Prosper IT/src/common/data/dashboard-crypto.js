@@ -377,7 +377,7 @@ const cryptoReports = [
         options: {
             chart: { sparkline: { enabled: !0 } },
             stroke: { curve: "smooth", width: 2 },
-            colors: ["#556ee6"],
+            colors: ["#00a3e9"],
             fill: {
                 type: "gradient",
                 gradient: {

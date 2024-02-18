@@ -229,21 +229,9 @@ const RightSidebar = props => {
                   <hr className="mt-1" />
                   <div className="radio-toolbar">
                     <span className="mb-2 d-block" id="radio-title">
-                      Left Sidebar Type{" "}
+                      Left Sidebar Type{""}
                     </span>
-                    <input
-                      type="radio"
-                      id="sidebarDefault"
-                      name="sidebarType"
-                      value={leftSidebarTypes.DEFAULT}
-                      checked={props.leftSideBarType === leftSidebarTypes.DEFAULT}
-                      onChange={e => {
-                        if (e.target.checked) {
-                          props.changeSidebarType(e.target.value);
-                        }
-                      }}
-                    />
-                    <label className="me-1" htmlFor="sidebarDefault">Default</label>
+                    
                     <input
                       type="radio"
                       id="sidebarCompact"
@@ -257,6 +245,19 @@ const RightSidebar = props => {
                       }}
                     />
                     <label className="me-1" htmlFor="sidebarCompact">Compact</label>
+                    <input
+                      type="radio"
+                      id="sidebarDefault"
+                      name="sidebarType"
+                      value={leftSidebarTypes.DEFAULT}
+                      checked={props.leftSideBarType === leftSidebarTypes.DEFAULT}
+                      onChange={e => {
+                        if (e.target.checked) {
+                          props.changeSidebarType(e.target.value);
+                        }
+                      }}
+                    />
+                    <label className="me-1" htmlFor="sidebarDefault">Default</label>
                     <input
                       type="radio"
                       id="sidebarIcon"

@@ -114,7 +114,7 @@ const EmailAlertTemplte = props => {
                                   fontWeight: "500",
                                   textAlign: "center",
                                   borderRadius: "3px 3px 0px 0px",
-                                  backgroundColor: "#556ee6",
+                                  backgroundColor: "#00a3e9",
                                   margin: "0",
                                   padding: "20px",
                                 }}

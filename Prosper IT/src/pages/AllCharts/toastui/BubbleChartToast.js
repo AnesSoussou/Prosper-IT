@@ -41,7 +41,7 @@ const theme = {
     }
   },
   series: {
-    colors: ["#556ee6", "#34c38f", "#f1b44c", "#f46a6a"]
+    colors: ["#00a3e9", "#34c38f", "#f1b44c", "#f46a6a"]
   }
 }
 TuiChart.registerTheme("skoteTheme", theme)

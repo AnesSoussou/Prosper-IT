@@ -19,7 +19,7 @@ const UiColors = () => {
                 <CardBody className="text-center">
                   <div className="rounded overflow-hidden">
                     <div className="bg-primary p-4">
-                      <h5 className="my-2 text-white">#556ee6</h5>
+                      <h5 className="my-2 text-white">#00a3e9</h5>
                     </div>
                     <div className="bg-primary bg-gradient p-4">
                       <h5 className="my-2 text-white">bg-gradient</h5>

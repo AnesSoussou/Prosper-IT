@@ -55,7 +55,7 @@ const ChartsKnob = () => {
                           value={value}
                           height={200}
                           width={150}
-                          fgColor="#556ee6"
+                          fgColor="#00a3e9"
                           displayCustom={() => {
                             return false
                           }}

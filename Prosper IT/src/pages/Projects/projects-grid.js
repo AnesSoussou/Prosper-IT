@@ -48,7 +48,7 @@ const ProjectsGrid = () => {
 
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const perPageData = 6;
+  const perPageData = 9;
   const indexOfLast = currentPage * perPageData;
   const indexOfFirst = indexOfLast - perPageData;
   const currentdata = useMemo(() => projects?.slice(indexOfFirst, indexOfLast), [projects, indexOfFirst, indexOfLast])

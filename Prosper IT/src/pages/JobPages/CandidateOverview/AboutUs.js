@@ -91,7 +91,7 @@ const AboutUs = () => {
                 
                 
                                     <div className="flex-grow-1 overflow-hidden">
-                                        <h5 className="text-truncate font-size-15"><Link to="#" className="text-dark">New admin Design</Link></h5>
+                                        <h5 className="text-truncate font-size-15"><Link to="#" className="text-dark">Placement NASDAQ</Link></h5>
                                         <p className="text-muted mb-4">It will be as simple as Occidental</p>
                                         <div className="avatar-group">
                                             <div className="avatar-group-item">

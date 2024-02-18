@@ -25,7 +25,7 @@ const theme = {
   },
   series: {
     series: {
-      colors: ["#556ee6", "#34c38f", "#f46a6a", "#50a5f1", "#f1b44c"]
+      colors: ["#00a3e9", "#34c38f", "#f46a6a", "#50a5f1", "#f1b44c"]
     },
     label: {
       color: "#fff",

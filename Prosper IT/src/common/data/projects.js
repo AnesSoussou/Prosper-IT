@@ -61,7 +61,7 @@ const projects = [
   {
     id: 9,
     img: companies01,
-    name: "New admin Design",
+    name: "Placement NASDAQ",
     description: "It will be as simple as Occidental",
     status: "Completed",
     color: "success",
@@ -101,10 +101,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -133,8 +133,8 @@ const projects = [
   {
     id: 1,
     img: companies02,
-    name: "Brand logo design",
-    description: "To achieve it would be necessary",
+    name: "Assurance Voiture",
+    description: "To achieve it",
     status: "Pending",
     color: "warning",
     dueDate: " 22 Oct, 19",
@@ -154,10 +154,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -186,7 +186,7 @@ const projects = [
   {
     id: 2,
     img: companies03,
-    name: "New Landing Design",
+    name: "Investissement locatif",
     description: "For science, music, sport, etc",
     status: "Delay",
     color: "danger",
@@ -239,7 +239,7 @@ const projects = [
   {
     id: 3,
     img: companies04,
-    name: "Redesign - Landing page",
+    name: "Optimisation prêt studio",
     description: "If several languages coalesce",
     status: "Completed",
     color: "success",
@@ -293,7 +293,7 @@ const projects = [
   {
     id: 4,
     img: companies05,
-    name: "Skote Dashboard UI",
+    name: "Assurance maison",
     description: "Separate existence is a myth",
     status: "Completed",
     color: "success",
@@ -347,7 +347,7 @@ const projects = [
   {
     id: 5,
     img: companies06,
-    name: "Blog Template UI",
+    name: "Géradin Industriel",
     description: "For science, music, sport, etc",
     status: "Pending",
     color: "warning",
@@ -467,7 +467,7 @@ const projects = [
   {
     id: 8,
     img: companies02,
-    name: "New admin Design",
+    name: "Placement NASDAQ",
     description: "Their most common words.",
     status: "Completed",
     color: "success",
@@ -565,7 +565,7 @@ const options = {
       text: "Week",
     },
   },
-  colors: ["#556ee6"],
+  colors: ["#00a3e9"],
 };
 
 const series = [
@@ -579,7 +579,7 @@ const projectListData = [
   {
     id: 1,
     img: companies01,
-    name: "New admin Design",
+    name: "Placement NASDAQ",
     description: "It will be as simple as Occidental",
     dueDate: "15 Oct, 19",
     status: "Completed",

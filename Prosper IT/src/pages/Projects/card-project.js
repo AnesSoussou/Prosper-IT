@@ -28,32 +28,7 @@ const CardProject = ({ projects }) => {
                     <Link to={`/projects-overview/${project.id}`} className="text-dark">{project.name}</Link>
                   </h5>
                   <p className="text-muted mb-4">{project.description}</p>
-                  <div className="avatar-group">
-                    {project.team.map((team, key) =>
-                      !team.img || team.img !== "Null" ? (
-                        <React.Fragment key={key}>
-                          <div className="avatar-group-item">
-                            <Link to="#" className="d-inline-block" id={"member" + team.id} >
-                              <img src={team.img} className="rounded-circle avatar-xs" alt="" />
-
-                              <UncontrolledTooltip placement="top" target={"member" + team.id}>{team.fullname}</UncontrolledTooltip>
-                            </Link>
-                          </div>
-                        </React.Fragment>
-                      ) : (
-                        <React.Fragment key={key}>
-                          <div className="avatar-group-item">
-                            <Link to="#" className="d-inline-block" id={"member" + team.id}>
-                              <div className="avatar-xs">
-                                <span className={`avatar-title rounded-circle bg-${team.color} text-white font-size-16`} >{team.name}  </span>
-                                <UncontrolledTooltip placement="top" target={"member" + team.id} >{team.fullname}</UncontrolledTooltip>
-                              </div>
-                            </Link>
-                          </div>
-                        </React.Fragment>
-                      )
-                    )}
-                  </div>
+                  
                 </div>
               </div>
             </CardBody>

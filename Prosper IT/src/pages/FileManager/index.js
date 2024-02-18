@@ -24,7 +24,7 @@ const Index = () => {
         enabled: true,
       },
     },
-    colors: ["#556ee6"],
+    colors: ["#00a3e9"],
     plotOptions: {
       radialBar: {
         startAngle: -90,
