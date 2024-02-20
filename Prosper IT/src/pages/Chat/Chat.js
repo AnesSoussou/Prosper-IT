@@ -267,7 +267,7 @@ const Chat = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="Messages" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Développez votre Patrimoine" />
 
           <Row>
             <Col lg="12">

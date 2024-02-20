@@ -244,7 +244,7 @@ const Prosper = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Prosper IT" breadcrumbItem="Messages" />
+          <Breadcrumbs title="Prosper IT" breadcrumbItem="Prosper" />
 
           <Row>
             <Col lg="12">
@@ -268,7 +268,7 @@ const Prosper = () => {
                                       <div className="ctext-wrap">
                                       <>
                                         <div className="conversation-name">
-                                          {message.to_id === 1 ? "OpenAI" : "Vous"}
+                                          {message.to_id === 1 ? "Prosper iT" : "Vous"}
                                         </div>
                                         <p>{message.msg}</p>
                                         <p className="chat-time mb-0">
