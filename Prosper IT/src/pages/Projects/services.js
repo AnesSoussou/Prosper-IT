@@ -20,7 +20,7 @@ import { createSelector } from "reselect";
 import Spinners from "components/Common/Spinner";
 import Paginations from "components/Common/Pagination";
 
-const ProjectsGrid = () => {
+const Services = () => {
 
   //meta title
   document.title = "Mes Dossiers | Prosper iT";
@@ -90,4 +90,4 @@ const ProjectsGrid = () => {
   );
 };
 
-export default withRouter(ProjectsGrid);
+export default withRouter(Services);

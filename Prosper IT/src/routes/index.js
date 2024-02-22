@@ -171,6 +171,7 @@ import Pages500 from "../pages/Utility/pages-500";
 import ContactsGrid from "../pages/Contacts/contacts-grid";
 import ContactsList from "../pages/Contacts/ContactList/contacts-list";
 import ContactsProfile from "../pages/Contacts/ContactsProfile/contacts-profile";
+import Services from "pages/Projects/services";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
@@ -231,6 +232,7 @@ const authProtectedRoutes = [
 
   //Projects
   { path: "/projects-grid", component: <ProjectsGrid /> },
+  { path: "/services", component: <Services /> },
   { path: "/projects-list", component: <ProjectsList /> },
   { path: "/projects-overview", component: <ProjectsOverview /> },
   { path: "/projects-overview/:id", component: <ProjectsOverview /> },

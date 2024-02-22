@@ -168,13 +168,13 @@ const SidebarContent = props => {
             <li>
               <Link to="/projects-grid" >
                 <i className="bx bxs-folder-open"></i>
-                <span>{props.t("Mes Dossiers")}</span>
+                <span>{props.t("Dossiers")}</span>
               </Link>
             </li>
 
             <li>
               <Link to="/chat" >
-                <i className="bx bx-chat"></i>
+                <i className="bx bxs-chat"></i>
                 <span>{props.t("Messages")}</span>
               </Link>
             </li>

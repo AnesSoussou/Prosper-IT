@@ -7,14 +7,14 @@ import Overview from './Overview';
 import DetailsSection from './DetailsSection';
 
 const JobDetails = () => {
-    document.title = "Job Details | Skote - React Admin & Dashboard Template";
+    document.title = "Détails service | Prosper iT";
    
     return (
         <React.Fragment>
              <div className="page-content">
                 <Container fluid>
                 {/* Render Breadcrumbs */}
-                <Breadcrumbs title="Jobs" breadcrumbItem="Job Details" />
+                <Breadcrumbs title="Jobs" breadcrumbItem="Détails service" />
 
                 <Row>
                     <Overview />

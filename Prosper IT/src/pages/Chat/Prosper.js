@@ -38,7 +38,7 @@ import openAI from "./OpenAI"
 
 const Prosper = () => {
   //meta title
-  document.title = "Chat | Skote - React Admin & Dashboard Template"
+  document.title = "Prosper | Prosper iT"
 
   const dispatch = useDispatch()
 
@@ -244,7 +244,7 @@ const Prosper = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Prosper IT" breadcrumbItem="Messages" />
+          <Breadcrumbs title="Prosper IT" breadcrumbItem="Prosper" />
 
           <Row>
             <Col lg="12">
@@ -268,7 +268,7 @@ const Prosper = () => {
                                       <div className="ctext-wrap">
                                       <>
                                         <div className="conversation-name">
-                                          {message.to_id === 1 ? "OpenAI" : "Vous"}
+                                          {message.to_id === 1 ? "Propser" : "Vous"}
                                         </div>
                                         <p>{message.msg}</p>
                                         <p className="chat-time mb-0">
@@ -360,7 +360,7 @@ const Prosper = () => {
                                   <li className="list-inline-item">
                                     <label
                                       htmlFor="imageInput"
-                                      style={{ color: "#556ee6", fontSize: 16 }}
+                                      style={{ color: "#3991e0", fontSize: 16 }}
                                     >
                                       <i
                                         className="mdi mdi-file-image-outline me-1"
