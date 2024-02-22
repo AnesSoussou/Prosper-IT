@@ -159,14 +159,35 @@ const SidebarContent = props => {
             <li>
               <Link to="/projects-grid" >
                 <i className="bx bxs-folder-open"></i>
-                <span>{props.t("Mes Dossiers")}</span>
+                <span>{props.t("Dossiers")}</span>
               </Link>
             </li>
 
             <li>
               <Link to="/chat" >
-                <i className="bx bx-chat"></i>
+                <i className="bx bxs-chat"></i>
                 <span>{props.t("Messages")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/services" >
+                <i className="bx bxs-star"></i>
+                <span>{props.t("Services")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/job-details" >
+                <i className="bx bxs-copy-alt"></i>
+                <span>{props.t("Services")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/contacts-profile" >
+                <i className="bx bxs-user-circle"></i>
+                <span>{props.t("Profile")}</span>
               </Link>
             </li>
 

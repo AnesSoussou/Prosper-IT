@@ -67,16 +67,11 @@ const ProjectsOverview = props => {
               </Row>
 
               <Row >
-                <Col lg="4">
-                  <Notifications options={options} series={series} />
+                <Col lg="8">
+                  <ChantBox comments={projectDetail.comments} />
                 </Col>
-
                 <Col lg="4">
                   <AddedJobs team={projectDetail.team} />
-                </Col>
-
-                <Col lg="4">
-                  <ChantBox comments={projectDetail.comments} />
                 </Col>
               </Row>
             </>

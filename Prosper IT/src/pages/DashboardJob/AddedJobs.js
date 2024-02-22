@@ -12,7 +12,7 @@ const AddedJobs = () => {
             <Col className="mb-4">
                 <Card>
                     <CardBody>
-                        <h4 className="card-title mb-4">Recent Added Jobs</h4>
+                        <h4 className="card-title mb-4">Services associés</h4>
                         <SimpleBar style={{ maxHeight: "376px" }}>
                             <div className="vstack gap-4">
                                 {(recentAddedJobsData || [])?.map((job, index) => (

@@ -29,6 +29,7 @@ import profile1 from "assets/images/profile-img.png";
 // import charts
 import ApexRevenue from "../ApexRevenue";
 import { getUserProfile } from "store/actions";
+import AddedJobs from "pages/DashboardJob/AddedJobs";
 
 const ContactsProfile = props => {
 
@@ -39,13 +40,14 @@ const ContactsProfile = props => {
 
   // eslint-disable-next-line no-unused-vars
   const [miniCards, setMiniCards] = useState([
-    {
-      title: "Completed Projects",
-      iconClass: "bx-check-circle",
-      text: "125",
-    },
-    { title: "Pending Projects", iconClass: "bx-hourglass", text: "12" },
-    { title: "Total Revenue", iconClass: "bx-package", text: "$36,524" },
+    { title: "Dossiers en cours", 
+      iconClass: "bx bx-revision", 
+      text: "12" },
+     {
+        title: "Nombre de dossiers",
+        iconClass: "bx bxs-check-circle",
+        text: "25",
+      },
   ]);
 
   useEffect(() => {
@@ -102,8 +104,7 @@ const ContactsProfile = props => {
                   <Row>
                     <Col xs="7">
                       <div className="text-primary p-3">
-                        <h5 className="text-primary">Welcome Back !</h5>
-                        <p>It will seem like simplified</p>
+                        <h5 className="text-primary">Bonjour !</h5>
                       </div>
                     </Col>
                     <Col xs="5" className="align-self-end">
@@ -113,7 +114,7 @@ const ContactsProfile = props => {
                 </div>
                 <CardBody className="pt-0">
                   <Row>
-                    <Col sm="4">
+                    <Col sm="6">
                       <div className="avatar-md profile-user-wid mb-4">
                         <img
                           src={userProfile.img}
@@ -145,12 +146,7 @@ const ContactsProfile = props => {
                             <p className="text-muted mb-0">Revenue</p>
                           </Col>
                         </Row>
-                        <div className="mt-4">
-                          <Link to="" className="btn btn-primary  btn-sm">
-                            View Profile{" "}
-                            <i className="mdi mdi-arrow-right ms-1" />
-                          </Link>
-                        </div>
+                        
                       </div>
                     </Col>
                   </Row>
@@ -158,8 +154,24 @@ const ContactsProfile = props => {
               </Card>
 
               <Card>
+                <AddedJobs />
+              </Card>
+            </Col>
+
+            <Col xl="8">
+              <Row>
+                {(miniCards || [])?.map((card, key) => (
+                  <MiniCards
+                    title={card.title}
+                    text={card.text}
+                    iconClass={card.iconClass}
+                    key={"_card_" + key}
+                  />
+                ))}
+              </Row>
+              <Card>
                 <CardBody>
-                  <CardTitle className="mb-4">Personal Information</CardTitle>
+                  <CardTitle className="mb-4">Informations personnelles</CardTitle>
                   <p className="text-muted mb-4">
                     {userProfile.personalDetail}
                   </p>
@@ -187,94 +199,37 @@ const ContactsProfile = props => {
                   </div>
                 </CardBody>
               </Card>
-
+              <Card>
               <Card>
                 <CardBody>
-                  <CardTitle className="mb-5">Experience</CardTitle>
-                  <div >
-                    <ul className="verti-timeline list-unstyled">
-                      {(userProfile.experiences || [])?.map((experience, i) => (
-                        <li
-                          className={
-                            experience.id === 1
-                              ? "event-list active"
-                              : "event-list"
-                          }
-                          key={"_exp_" + i}
-                        >
-                          <div className="event-timeline-dot">
-                            <i
-                              className={
-                                experience.id === 1
-                                  ? "bx bx-right-arrow-circle bx-fade-right"
-                                  : "bx bx-right-arrow-circle"
-                              }
-                            />
-                          </div>
-                          <div className="d-flex">
-                            <div className="me-3">
-                              <i
-                                className={
-                                  "bx " +
-                                  experience.iconClass +
-                                  " h4 text-primary"
-                                }
-                              />
-                            </div>
-                            <div className="flex-grow-1">
-                              <div>
-                                <h5 className="font-size-15">
-                                  <Link
-                                    to={experience.link}
-                                    className="text-dark"
-                                  >
-                                    {experience.designation}
-                                  </Link>
-                                </h5>
-                                <span className="text-primary">
-                                  {experience.timeDuration}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
+                  <CardTitle className="mb-4">Informations professionnelles</CardTitle>
+                  <p className="text-muted mb-4">
+                    {userProfile.personalDetail}
+                  </p>
+                  <div className="table-responsive">
+                    <Table className="table-nowrap mb-0">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Full Name :</th>
+                          <td>{userProfile.name}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Mobile :</th>
+                          <td>{userProfile.phone}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">E-mail :</th>
+                          <td>{userProfile.email}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Location :</th>
+                          <td>{userProfile.location}</td>
+                        </tr>
+                      </tbody>
+                    </Table>
                   </div>
                 </CardBody>
               </Card>
-            </Col>
-
-            <Col xl="8">
-              <Row>
-                {(miniCards || [])?.map((card, key) => (
-                  <MiniCards
-                    title={card.title}
-                    text={card.text}
-                    iconClass={card.iconClass}
-                    key={"_card_" + key}
-                  />
-                ))}
-              </Row>
-              <Card>
-                <CardBody>
-                  <CardTitle className="mb-4">Revenue</CardTitle>
-                  <div id="revenue-chart">
-                    <ApexRevenue dataColors='["--bs-primary"]' />
-                  </div>
-                </CardBody>
-              </Card>
-              <Card>
-                <CardBody>
-                  <CardTitle className="mb-4">My Projects</CardTitle>
-
-                  <TableContainer
-                    columns={columns}
-                    data={userProfile.projects || []}
-                    isGlobalFilter={false}
-                    tableClass='table-nowrap table-hover mb-00'
-                  />
-                </CardBody>
               </Card>
             </Col>
           </Row>

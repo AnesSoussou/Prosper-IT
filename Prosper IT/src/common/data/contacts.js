@@ -88,7 +88,7 @@ const userProfile = {
   projectCount: 125,
   revenue: 1245,
   personalDetail:
-    "Hi I'm Cynthia Price,has been the industry's standard dummy text To an English person, it will seem like simplified English, as a skeptical Cambridge.",
+    "",
   phone: "(123) 123 1234",
   email: "cynthiaskote@gmail.com",
   location: "California, United States",

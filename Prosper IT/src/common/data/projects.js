@@ -61,7 +61,7 @@ const projects = [
   {
     id: 9,
     img: companies01,
-    name: "New admin Design",
+    name: "Placement NASDAQ",
     description: "It will be as simple as Occidental",
     status: "Completed",
     color: "success",
@@ -101,10 +101,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -154,10 +154,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -207,10 +207,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -261,10 +261,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -315,10 +315,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -368,10 +368,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -435,10 +435,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -490,10 +490,10 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
-      { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
+      { name: "Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Doc.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
       {
@@ -565,7 +565,7 @@ const options = {
       text: "Week",
     },
   },
-  colors: ["#556ee6"],
+  colors: ["#3991e0"],
 };
 
 const series = [

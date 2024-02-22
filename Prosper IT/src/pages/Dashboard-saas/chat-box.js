@@ -122,29 +122,15 @@ const ChantBox = () => {
                   <li className="list-inline-item d-none d-sm-inline-block">
                     <Dropdown isOpen={settingsMenu} toggle={() => { setSettingsMenu(!settingsMenu); }}>
                       <DropdownToggle tag="i" className="btn nav-btn" type="button">
-                        <i className="bx bx-cog" />
+                        <i className="bx bx-dots-horizontal-rounded" />
                       </DropdownToggle>
                       <DropdownMenu>
-                        <DropdownItem href="#!">View Profile</DropdownItem>
                         <DropdownItem href="#!">Clear chat</DropdownItem>
-                        <DropdownItem href="#!">Muted</DropdownItem>
                         <DropdownItem href="#!">Delete</DropdownItem>
                       </DropdownMenu>
                     </Dropdown>
                   </li>
 
-                  <li className="list-inline-item">
-                    <Dropdown isOpen={otherMenu} toggle={() => { setOtherMenu(!otherMenu); }}>
-                      <DropdownToggle tag="i" className="btn nav-btn" type="button">
-                        <i className="bx bx-dots-horizontal-rounded" />
-                      </DropdownToggle>
-                      <DropdownMenu className="dropdown-menu-end">
-                        <DropdownItem href="#!">Action</DropdownItem>
-                        <DropdownItem href="#!">Another Action</DropdownItem>
-                        <DropdownItem href="#!">Something else</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </li>
                 </ul>
               </Col>
             </Row>
