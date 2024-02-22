@@ -14,12 +14,10 @@ export const loginUser = (user, history) => {
   }
 }
 
-export const loginSuccess = user => {
-  return {
-    type: LOGIN_SUCCESS,
-    payload: user,
-  }
-}
+export const loginSuccess = (userInfo) => ({
+  type: LOGIN_SUCCESS,
+  payload: userInfo,
+})
 
 export const logoutUser = history => {
   return {

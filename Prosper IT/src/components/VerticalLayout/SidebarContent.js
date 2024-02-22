@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -15,6 +15,15 @@ import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 
 const SidebarContent = props => {
+
+  const [userRole, setUserRole] = useState(null);
+
+  useEffect(() => {
+    const authUser = JSON.parse(localStorage.getItem("authUser"));
+    const role = authUser ? authUser.role : null;
+    setUserRole(role);
+  }, []);
+
   const ref = useRef();
   const activateParentDropdown = useCallback((item) => {
     item.classList.add("active");
@@ -169,6 +178,70 @@ const SidebarContent = props => {
                 <span>{props.t("Messages")}</span>
               </Link>
             </li>
+
+            {userRole === 'admin' && (
+          <>
+            <li>
+              <Link to="/contacts">
+                <i className="bx bx-user"></i>
+                <span>{props.t("Contacts")}</span>
+              </Link>
+            </li>
+        
+            <li>
+              <Link to="/#" className="has-arrow ">
+                <i className="bx bx-list-ul"></i>
+                <span>{props.t("Tables")}</span>
+              </Link>
+              <ul className="sub-menu">
+                <li>
+                  <Link to="/tables-basic">{props.t("Basic Tables")}</Link>
+                </li>
+                <li>
+                  <Link to="/tables-datatable">{props.t("Data Tables")}</Link>
+                </li>
+          
+              </ul>
+            </li>
+            <li>
+              <Link to="/calendar" >
+                <i className="bx bx-calendar"></i>
+                <span>{props.t("Calendar")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/#" className="has-arrow ">
+                <i className="bx bxs-bar-chart-alt-2"></i>
+                <span>{props.t("Charts")}</span>
+              </Link>
+
+              <ul className="sub-menu">
+                <li>
+                  <Link to="/apex-charts">{props.t("Apex charts")}</Link>
+                </li>
+                <li>
+                  <Link to="/chartjs-charts">{props.t("Chartjs Chart")}</Link>
+                </li>
+                <li>
+                  <Link to="/e-charts">{props.t("E Chart")}</Link>
+                </li>
+                <li>
+                  <Link to="/sparkline-charts">
+                    {props.t("Sparkline Chart")}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/charts-knob">{props.t("Knob Chart")}</Link>
+                </li>
+                <li>
+                  <Link to="/re-charts">{props.t("Re Chart")}</Link>
+                </li>
+              </ul>
+            </li>
+          </>
+          
+        )}
 
           </ul>
         </div>

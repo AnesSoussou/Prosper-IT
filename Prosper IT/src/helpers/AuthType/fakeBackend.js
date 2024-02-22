@@ -50,6 +50,13 @@ import {
 let users = [
   {
     uid: 1,
+    username: "client",
+    role: "client",
+    password: "123456",
+    email: "client@themesbrand.com",
+  },
+  {
+    uid: 2,
     username: "admin",
     role: "admin",
     password: "123456",
