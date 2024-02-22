@@ -34,6 +34,7 @@ import {
   toggleLeftmenu,
   changeSidebarType,
 } from "../../store/actions";
+import { leftSidebarTypes } from 'constants/layout';
 
 const Header = props => {
   const [search, setsearch] = useState(false);
@@ -67,16 +68,26 @@ const Header = props => {
     }
   }
 
-  function tToggle() {
+  function tToggle(currentSidebarType) {
     var body = document.body;
+    var pageTopbar = document.getElementById('page-topbar');
+    
+    // On vérifie si on est en mode compact
+    const isCompactMode = currentSidebarType === leftSidebarTypes.COMPACT;
+    
     if (window.screen.width <= 998) {
       body.classList.toggle("sidebar-enable");
     } else {
+      // Basculer entre les états de la barre latérale
       body.classList.toggle("vertical-collpsed");
       body.classList.toggle("sidebar-enable");
+      if (isCompactMode) {
+        pageTopbar.style.left = body.classList.contains("vertical-collpsed") ? "70px" : "160px";
+      }
     }
-
   }
+  
+  
 
   return (
     <React.Fragment>
@@ -101,17 +112,15 @@ const Header = props => {
             <button
               type="button"
               onClick={() => {
-                tToggle();
+                tToggle(props.leftSideBarType);
               }}
               className="btn btn-sm px-3 font-size-16 header-item "
               id="vertical-menu-btn"
             >
               <i className="fa fa-fw fa-bars" />
             </button>
+            
 
-         
-
-           
           </div>
           <div className="d-flex">
             <div className="dropdown d-inline-block d-lg-none ms-2">

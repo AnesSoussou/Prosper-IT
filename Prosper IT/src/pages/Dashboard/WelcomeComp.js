@@ -1,12 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import { Row, Col, Card, CardBody } from "reactstrap"
 import { Link } from "react-router-dom"
 
 import avatar1 from "../../assets/images/users/avatar-1.jpg"
+import avatar2 from "../../assets/images/users/avatar-2.jpg"
 import profileImg from "../../assets/images/profile-img.png"
 
 const WelcomeComp = () => {
+  const [userRole, setUserRole] = useState(null)
+
+  useEffect(() => {
+    const authUser = JSON.parse(localStorage.getItem("authUser"))
+    const role = authUser ? authUser.role : null
+    setUserRole(role)
+  }, [])
+
   return (
     <React.Fragment>
       <Card className="overflow-hidden">
@@ -27,13 +36,23 @@ const WelcomeComp = () => {
           <Row>
             <Col sm="4">
               <div className="avatar-md profile-user-wid mb-4">
-                <img
-                  src={avatar1}
-                  alt=""
-                  className="img-thumbnail rounded-circle"
-                />
+                {userRole === "admin" ? (
+                  <img
+                    src={avatar1}
+                    alt=""
+                    className="img-thumbnail rounded-circle"
+                  />
+                ) : (
+                  <img
+                    src={avatar2}
+                    alt=""
+                    className="img-thumbnail rounded-circle"
+                  />
+                )}
               </div>
-              <h5 className="font-size-15 text-truncate">Henry Price</h5>
+              <h5 className="font-size-15 text-truncate">
+                {userRole === "admin" ? "Admin" : "Henry Price"}
+              </h5>
               <p className="text-muted mb-0 text-truncate">UI/UX Designer</p>
             </Col>
 
@@ -50,10 +69,7 @@ const WelcomeComp = () => {
                   </Col>
                 </Row>
                 <div className="mt-4">
-                  <Link
-                    to=""
-                    className="btn btn-primary  btn-sm"
-                  >
+                  <Link to="" className="btn btn-primary  btn-sm">
                     View Profile <i className="mdi mdi-arrow-right ms-1"></i>
                   </Link>
                 </div>
