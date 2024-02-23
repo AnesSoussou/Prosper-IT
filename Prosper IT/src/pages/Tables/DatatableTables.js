@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import PropTypes from 'prop-types';
-import { FaUser } from 'react-icons/fa'; // Exemple d'utilisation de FontAwesome pour l'icône utilisateur
 
 // Importez vos composants comme avant
 import Breadcrumbs from '../../components/Common/Breadcrumb';
