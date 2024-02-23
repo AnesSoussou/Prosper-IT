@@ -40,8 +40,10 @@ const Login = props => {
       password: Yup.string().required("Please Enter Your Password"),
     }),
     onSubmit: (values) => {
+      console.log("Tentative de connexion avec", values);
       dispatch(loginUser(values, props.router.navigate));
     }
+    
   });
 
 

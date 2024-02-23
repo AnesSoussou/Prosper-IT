@@ -166,3 +166,16 @@ tbody tr {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
+.edit-button {
+  background-color: #007bff; /* Bleu Bootstrap par défaut */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+

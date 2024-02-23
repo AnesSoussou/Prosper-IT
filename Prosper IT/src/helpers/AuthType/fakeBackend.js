@@ -80,6 +80,7 @@ const fakeBackend = () => {
 
   mock.onPost("/post-fake-login").reply(config => {
     const user = JSON.parse(config["data"])
+    console.log("Tentative de connexion reçue pour", user);
     const validUser = users.filter(
       usr => usr.email === user.email && usr.password === user.password
     )
@@ -87,8 +88,10 @@ const fakeBackend = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (validUser["length"] === 1) {
+          console.log("Connexion réussie pour", user.email);
           resolve([200, validUser[0]])
         } else {
+          console.log("Échec de la connexion pour", user.email);
           reject([
             "Username and password are invalid. Please enter correct username and password",
           ])
