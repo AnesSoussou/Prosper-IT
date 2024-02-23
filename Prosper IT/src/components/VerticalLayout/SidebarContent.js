@@ -181,63 +181,33 @@ const SidebarContent = props => {
 
             {userRole === 'admin' && (
           <>
+                    <li>
+              <Link to="/services" >
+                <i className="bx bxs-star"></i>
+                <span>{props.t("Services")}</span>
+              </Link>
+            </li>
+
             <li>
-              <Link to="/contacts">
+              <Link to="/job-details" >
+                <i className="bx bxs-copy-alt"></i>
+                <span>{props.t("Services")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/contacts-profile" >
+                <i className="bx bxs-user-circle"></i>
+                <span>{props.t("Profile")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/tables-datatable">
                 <i className="bx bx-user"></i>
-                <span>{props.t("Contacts")}</span>
-              </Link>
-            </li>
-        
-            <li>
-              <Link to="/#" className="has-arrow ">
-                <i className="bx bx-list-ul"></i>
-                <span>{props.t("Tables")}</span>
-              </Link>
-              <ul className="sub-menu">
-                <li>
-                  <Link to="/tables-basic">{props.t("Basic Tables")}</Link>
-                </li>
-                <li>
-                  <Link to="/tables-datatable">{props.t("Data Tables")}</Link>
-                </li>
-          
-              </ul>
-            </li>
-            <li>
-              <Link to="/calendar" >
-                <i className="bx bx-calendar"></i>
-                <span>{props.t("Calendar")}</span>
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/#" className="has-arrow ">
-                <i className="bx bxs-bar-chart-alt-2"></i>
-                <span>{props.t("Charts")}</span>
+                <span>{props.t("Clients")}</span>
               </Link>
 
-              <ul className="sub-menu">
-                <li>
-                  <Link to="/apex-charts">{props.t("Apex charts")}</Link>
-                </li>
-                <li>
-                  <Link to="/chartjs-charts">{props.t("Chartjs Chart")}</Link>
-                </li>
-                <li>
-                  <Link to="/e-charts">{props.t("E Chart")}</Link>
-                </li>
-                <li>
-                  <Link to="/sparkline-charts">
-                    {props.t("Sparkline Chart")}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/charts-knob">{props.t("Knob Chart")}</Link>
-                </li>
-                <li>
-                  <Link to="/re-charts">{props.t("Re Chart")}</Link>
-                </li>
-              </ul>
             </li>
           </>
           
