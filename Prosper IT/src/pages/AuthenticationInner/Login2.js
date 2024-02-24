@@ -62,9 +62,9 @@ const Login2 = () => {
                     </div>
                     <div className="my-auto">
                       <div>
-                        <h5 className="text-primary">Welcome Back !</h5>
+                        <h5 className="text-primary">Bienvenue !</h5>
                         <p className="text-muted">
-                          Sign in to continue to Skote.
+                          Sign in to continue to Prosper iT.
                         </p>
                       </div>
 
