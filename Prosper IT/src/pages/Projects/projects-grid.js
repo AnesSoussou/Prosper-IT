@@ -70,7 +70,7 @@ const ProjectsGrid = () => {
               isLoading ? <Spinners setLoading={setLoading} />
                 :
                 <>
-                  <CardProject projects={projectsList} />
+                  <CardProject projects={projectsList} mode="projects" />
                   <Row>
                     <Paginations
                       perPageData={perPageData}

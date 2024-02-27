@@ -30,7 +30,7 @@ const INIT_STATE = {
   layoutWidth: layoutWidthTypes.FLUID,
   leftSideBarTheme: localStorage.getItem('sidebarTheme') || leftSideBarThemeTypes.LIGHT,
   leftSideBarThemeImage: leftBarThemeImageTypes.NONE,
-  leftSideBarType: leftSidebarTypes.DEFAULT,
+  leftSideBarType: leftSidebarTypes.COMPACT,
   topbarTheme: topBarThemeTypes.LIGHT,
   isPreloader: false,
   showRightSidebar: false,

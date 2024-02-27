@@ -70,7 +70,7 @@ const Services = () => {
               isLoading ? <Spinners setLoading={setLoading} />
                 :
                 <>
-                  <CardProject projects={projectsList} />
+                  <CardProject projects={projectsList} mode="services" />
                   <Row>
                     <Paginations
                       perPageData={perPageData}
