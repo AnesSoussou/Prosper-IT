@@ -398,7 +398,7 @@ const Prosper = () => {
                               </div>
                             </div>
                           </Col>
-                          <Col className="col-auto">
+                          <Col className="col-auto" style={{ marginInline: "23px" }}>
                             <Button
                               type="button"
                               color="primary"

@@ -278,153 +278,48 @@ const Chat = () => {
 
                     <div className="chat-leftsidebar-nav position-relative">               
                       <TabContent activeTab={activeTab} className="py-4">
-                        <TabPane tabId="1">
-                          <div>
-                            <ul className="list-unstyled chat-list" id="recent-list">
-                              {
-                                isLoading ? <Spinners setLoading={setLoading} /> :
-                                  <SimpleBar style={{ maxHeight: "410px" }}>
-                                    {map(chats, chat => (
-                                      <li
-                                        key={chat.id + chat.status}
-                                        className={
-                                          currentRoomId === chat.roomId
-                                            ? "active"
-                                            : ""
-                                        }
-                                      >
-                                        <Link
-                                          to="#"
-                                          onClick={() => {
-                                            userChatOpen(chat);
-                                          }}
-                                        >
-                                          <div className="d-flex">
-                                            <div className="align-self-center me-3">
-                                              <i
-                                                className={
-                                                  chat.status === "online"
-                                                    ? "mdi mdi-circle text-success font-size-10"
-                                                    : chat.status === "intermediate"
-                                                      ? "mdi mdi-circle text-warning font-size-10"
-                                                      : "mdi mdi-circle font-size-10"
-                                                }
-                                              />
-                                            </div>
-                                            {chat.isImg ?
-                                              <div className="avatar-xs align-self-center me-3">
-                                                <span className="avatar-title rounded-circle bg-primary-subtle text-primary">
-                                                  {chat.profile}
-                                                </span>
-                                              </div>
-                                              :
-                                              <div className="align-self-center me-3">
-                                                <img
-                                                  src={chat.image}
-                                                  className="rounded-circle avatar-xs"
-                                                  alt=""
-                                                />
-                                              </div>
-                                            }
+                      <TabPane tabId="1">
+  <div>
+    <ul className="list-unstyled chat-list" id="recent-list">
+      {isLoading ? (
+        <Spinners setLoading={setLoading} />
+      ) : (
+        <SimpleBar style={{ maxHeight: "410px" }}>
+          {groups.map((group) => (
+            <li
+              key={group.id}
+              className={currentRoomId === group.roomId ? "active" : ""}
+            >
+              <Link
+                to="#"
+                onClick={() => {
+                  userChatOpen(group);
+                }}
+              >
+                <div className="d-flex align-items-center">
+                  <div className="avatar-xs me-3">
+                    {/* Ici, affichez l'image du dossier s'il y en a une, sinon affichez un placeholder ou le nom */}
+                    {group.image.startsWith("http") ? (
+                      <img src={group.image} className="rounded-circle avatar-xs" alt={group.name} />
+                    ) : (
+                      <span className="avatar-title rounded-circle bg-primary-subtle text-primary">
+                        {group.image} {/* C'était prévu pour être une lettre ou un placeholder */}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex-grow-1">
+                    <h5 className="font-size-14 mb-0">{group.name}</h5>
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </SimpleBar>
+      )}
+    </ul>
+  </div>
+</TabPane>
 
-                                            <div className="flex-grow-1 overflow-hidden">
-                                              <h5 className="text-truncate font-size-14 mb-1">
-                                                {chat.name}
-                                              </h5>
-                                              <p className="text-truncate mb-0">
-                                                {chat.description}
-                                              </p>
-                                            </div>
-                                            <div className="font-size-11">
-                                              {chat.time}
-                                            </div>
-                                          </div>
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </SimpleBar>
-                              }
-                            </ul>
-                          </div>
-                        </TabPane>
-
-                        <TabPane tabId="2">
-                          <h5 className="font-size-14 mb-3">Group</h5>
-                          <ul className="list-unstyled chat-list">
-                            <SimpleBar style={{ height: "410px" }}>
-                              {groups &&
-                                groups.map(group => (
-                                  <li key={"test" + group.image} className={currentRoomId === group.roomId ? "active" : ""}>
-                                    <Link
-                                      to="#"
-                                      onClick={() => {
-                                        userChatOpen(
-                                          group
-                                        );
-                                      }}
-                                    >
-                                      <div className="d-flex align-items-center">
-                                        <div className="avatar-xs me-3">
-                                          <span className="avatar-title rounded-circle bg-primary-subtle text-primary">
-                                            {group.image}
-                                          </span>
-                                        </div>
-
-                                        <div className="flex-grow-1">
-                                          <h5 className="font-size-14 mb-0">
-                                            {group.name}
-                                          </h5>
-                                        </div>
-                                      </div>
-                                    </Link>
-                                  </li>
-                                ))}
-                            </SimpleBar>
-                          </ul>
-                        </TabPane>
-
-                        <TabPane tabId="3">
-                          <h5 className="font-size-14 mb-3">Contact</h5>
-
-                          <div>
-                            <SimpleBar style={{ height: "410px" }}>
-                              {contacts &&
-                                contacts.map(contact => (
-                                  <div
-                                    key={"test_" + contact.category}
-                                    className={
-                                      contact.category === "A" ? "" : "mt-4"
-                                    }
-                                  >
-                                    <div className="avatar-xs mb-3">
-                                      <span className="avatar-title rounded-circle bg-primary-subtle text-primary">
-                                        {contact.category}
-                                      </span>
-                                    </div>
-
-                                    <ul className="list-unstyled chat-list">
-                                      {contact.child.map(array => (
-                                        <li key={"test" + array.id} className={currentRoomId === array.roomId ? "active" : ""}>
-                                          <Link
-                                            to="#"
-                                            onClick={() => {
-                                              userChatOpen(
-                                                array
-                                              );
-                                            }}
-                                          >
-                                            <h5 className="font-size-14 mb-0">
-                                              {array.name}
-                                            </h5>
-                                          </Link>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                ))}
-                            </SimpleBar>
-                          </div>
-                        </TabPane>
                       </TabContent>
                     </div>
                   </div>
