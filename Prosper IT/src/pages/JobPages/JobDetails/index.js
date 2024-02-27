@@ -3,8 +3,8 @@ import { Container, Row } from 'reactstrap';
 
 //Import Breadcrumb
 import Breadcrumbs from "components/Common/Breadcrumb";
-import Overview from './Overview';
 import DetailsSection from './DetailsSection';
+import Overview from './Overview';
 
 const JobDetails = () => {
     document.title = "Détails service | Prosper iT";
@@ -17,8 +17,8 @@ const JobDetails = () => {
                 <Breadcrumbs title="Jobs" breadcrumbItem="Détails service" />
 
                 <Row>
-                    <Overview />
                     <DetailsSection />
+                    <Overview />
                 </Row>
                 </Container>
             </div>

@@ -21,7 +21,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 const PagesFaqs = () => {
 
   //meta title
-  document.title = "FAQs | Skote - React Admin & Dashboard Template";
+  document.title = "Aide | Prosper iT";
   
   const [activeTab, setactiveTab] = useState("1");
 
@@ -30,7 +30,7 @@ const PagesFaqs = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Utility" breadcrumbItem="FAQs" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Besoin d'aide ?" />
 
           <div className="checkout-tabs">
             <Row>

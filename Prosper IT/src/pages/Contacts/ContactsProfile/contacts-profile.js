@@ -131,23 +131,7 @@ const ContactsProfile = props => {
                     </Col>
 
                     <Col sm={8}>
-                      <div className="pt-4">
-                        <Row>
-                          <Col xs="6">
-                            <h5 className="font-size-15">
-                              {userProfile.projectCount}
-                            </h5>
-                            <p className="text-muted mb-0">Projects</p>
-                          </Col>
-                          <Col xs="6">
-                            <h5 className="font-size-15">
-                              ${userProfile.revenue}
-                            </h5>
-                            <p className="text-muted mb-0">Revenue</p>
-                          </Col>
-                        </Row>
-                        
-                      </div>
+
                     </Col>
                   </Row>
                 </CardBody>
