@@ -82,11 +82,10 @@ const users = [
 ]
 const userProfile = {
   id: 1,
-  name: "Cynthia Price",
-  designation: "UI/UX Designer",
+  name: "Anissa Giordano",
   img: avatar1,
-  projectCount: 125,
-  revenue: 1245,
+  projectCount: 12,
+  revenue: 25,
   personalDetail:
     "",
   phone: "(123) 123 1234",

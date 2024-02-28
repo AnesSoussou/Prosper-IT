@@ -11,7 +11,7 @@ const Overview = () => {
             <Col xl={3}>
                 <Card>
                     <CardBody>
-                        <h5 className="mdi-check-decagram fw-semibold"> Souscription</h5>
+                        <h5 className="fw-semibold"> Souscription</h5>
 
                         <div className="table-responsive">
                             <table className="table">

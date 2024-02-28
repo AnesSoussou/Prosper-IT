@@ -55,69 +55,6 @@ const DetailsSection = () => {
                             </li>
                         </ul>
 
-                        <h5 className="fw-semibold mb-3">Requirements:</h5>
-                        <ul className="vstack gap-3 job-vstack">
-                            <li>
-                                Bachelor’s degree in computer science or related field.
-                            </li>
-                            <li>
-                                Advanced knowledge of Magento, JavaScript, HTML, PHP, CSS, and MySQL.
-                            </li>
-                            <li>
-                                Experience with complete eCommerce lifecycle development.
-                            </li>
-                            <li>
-                                Understanding of modern UI/UX trends.
-                            </li>
-                            <li>
-                                Knowledge of Google Tag Manager, SEO, Google Analytics, PPC, and A/B Testing.
-                            </li>
-                            <li>
-                                Good working knowledge of Adobe Photoshop and Adobe Illustrator.
-                            </li>
-                            <li>
-                                Strong attention to detail.
-                            </li>
-                            <li>
-                                Ability to project-manage and work to strict deadlines.
-                            </li>
-                            <li>
-                                Ability to work in a team environment.
-                            </li>
-                        </ul>
-
-                        <h5 className="fw-semibold mb-3">Qualification:</h5>
-                        <ul className="vstack gap-3 job-vstack">
-                            <li>
-                                B.C.A / M.C.A under National University course complete.
-                            </li>
-                            <li>
-                                3 or more years of professional design experience
-                            </li>
-                            <li>
-                                Advanced degree or equivalent experience in graphic and web design
-                            </li>
-                        </ul>
-
-                        <h5 className="fw-semibold mb-3">Skill & Experience:</h5>
-                        <ul className="vstack gap-3 job-vstack mb-0">
-                            <li>
-                                Understanding of key Design Principal
-                            </li>
-                            <li>
-                                Proficiency With HTML, CSS, Bootstrap
-                            </li>
-                            <li>
-                                WordPress: 1 year (Required)
-                            </li>
-                            <li>
-                                Experience designing and developing responsive design websites
-                            </li>
-                            <li>
-                                web designing: 1 year (Preferred)
-                            </li>
-                        </ul>
-
                         <div className="mt-4">
                             <span className="badge badge-soft-warning me-1">PHP</span>
                             <span className="badge badge-soft-warning me-1">Magento</span>
@@ -126,22 +63,7 @@ const DetailsSection = () => {
                             <span className="badge badge-soft-warning">Bootstrap</span>
                         </div>
 
-                        <div className="mt-4">
-                            <ul className="list-inline mb-0">
-                                <li className="list-inline-item mt-1">
-                                    Share this job:
-                                </li>
-                                <li className="list-inline-item mt-1">
-                                    <Link to="#" className="btn btn-outline-primary btn-hover"><i className="uil uil-facebook-f"></i> Facebook</Link>
-                                </li>
-                                <li className="list-inline-item mt-1">
-                                    <Link to="#" className="btn btn-outline-danger btn-hover"><i className="uil uil-google"></i> Google+</Link>
-                                </li>
-                                <li className="list-inline-item mt-1">
-                                    <Link to="#" className="btn btn-outline-success btn-hover"><i className="uil uil-linkedin-alt"></i> linkedin</Link>
-                                </li>
-                            </ul>
-                        </div>
+                      
                     </CardBody>
                 </Card>
             </Col>

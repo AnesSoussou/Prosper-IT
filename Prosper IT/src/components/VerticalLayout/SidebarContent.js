@@ -172,6 +172,56 @@ const SidebarContent = props => {
               </Link>
             </li>
 
+            {userRole === 'admin' && (
+          <>
+                   <li>
+              <Link to="/tables-datatable">
+                <i className="bx bxs-user-detail"></i>
+                <span>{props.t("Clients")}</span>
+              </Link>
+
+            </li>
+
+            <li>
+              <Link to="/tables-datatable" >
+                <i className="bx bxs-copy-alt"></i>
+                <span>{props.t("Partenaires")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/tables-datatable" >
+                <i className="bx bxs-copy-alt"></i>
+                <span>{props.t("Mails")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/tables-datatable" >
+                <i className="bx bxs-copy-alt"></i>
+                <span>{props.t("Documents")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/tables-datatable" >
+                <i className="bx bxs-copy-alt"></i>
+                <span>{props.t("Factures")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/tables-datatable" >
+                <i className="bx bxs-copy-alt"></i>
+                <span>{props.t("Dashboard")}</span>
+              </Link>
+            </li>
+
+           
+          </>
+          
+        )}
+
             <li>
               <Link to="/chat" >
                 <i className="bx bxs-chat"></i>
@@ -179,9 +229,7 @@ const SidebarContent = props => {
               </Link>
             </li>
 
-            {userRole === 'admin' && (
-          <>
-                    <li>
+            <li>
               <Link to="/services" >
                 <i className="bx bxs-star"></i>
                 <span>{props.t("Services")}</span>
@@ -191,27 +239,18 @@ const SidebarContent = props => {
             <li>
               <Link to="/job-details" >
                 <i className="bx bxs-copy-alt"></i>
-                <span>{props.t("Services")}</span>
+                <span>{props.t("Service")}</span>
               </Link>
             </li>
 
             <li>
-              <Link to="/contacts-profile" >
-                <i className="bx bxs-user-circle"></i>
-                <span>{props.t("Profile")}</span>
+              <Link to="/pages-faqs" >
+                <i className="bx bxs-buoy"></i>
+                <span>{props.t("Aide")}</span>
               </Link>
             </li>
 
-            <li>
-              <Link to="/tables-datatable">
-                <i className="bx bx-user"></i>
-                <span>{props.t("Clients")}</span>
-              </Link>
-
-            </li>
-          </>
           
-        )}
 
           </ul>
         </div>
