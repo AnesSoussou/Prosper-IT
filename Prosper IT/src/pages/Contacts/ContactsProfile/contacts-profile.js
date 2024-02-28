@@ -78,7 +78,6 @@ const ContactsProfile = props => {
                   </Row>
                 </div>
               </Card>
-
               <Card>
                 <AssociatedFiles />
               </Card>
