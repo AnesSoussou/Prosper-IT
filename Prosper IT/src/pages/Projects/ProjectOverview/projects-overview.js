@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import withRouter from "components/Common/withRouter";
 import { isEmpty } from "lodash";
-import { Col, Container, Row } from "reactstrap";
+import { Button, Col, Container, Row } from "reactstrap";
 
 //Import Breadcrumb
 import Breadcrumbs from "components/Common/Breadcrumb";
 
-import { getProjectDetail as onGetProjectDetail } from "store/projects/actions";
+import { deleteProject, getProjectsSuccess, getProjectDetail as onGetProjectDetail } from "store/projects/actions";
 import ProjectDetail from "./projectDetail";
 import { options, series } from "common/data/projects";
 import AttachedFiles from "./attachedFiles";
@@ -20,6 +20,14 @@ import AddedJobs from "pages/DashboardJob/AddedJobs";
 import ChantBox from "pages/Dashboard-saas/chat-box";
 
 const ProjectsOverview = props => {
+
+  const [userRole, setUserRole] = useState(null)
+
+  useEffect(() => {
+    const authUser = JSON.parse(localStorage.getItem("authUser"))
+    const role = authUser ? authUser.role : null
+    setUserRole(role)
+  }, [])
 
   //meta title
   document.title = "Détails dossier | Prosper iT";
@@ -43,16 +51,26 @@ const ProjectsOverview = props => {
     if (params && params.id) {
       dispatch(onGetProjectDetail(params.id));
     } else {
-      dispatch(onGetProjectDetail(1)); //remove this after full integration
+      dispatch(onGetProjectDetail(1));
     }
   }, [onGetProjectDetail]);
+
+const handleDeleteProject = (projectId) => {
+  dispatch(deleteProject(projectId));
+  dispatch(getProjectsSuccess());
+};
+
 
   return (
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="Détails dossier" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Détails dossier">
+          {userRole === "admin" && (
+            <Button color="danger" onClick={() => handleDeleteProject(params.id)} className="ml-3" style={{marginLeft:"30px"}}>Supprimer</Button>
+          )}
+          </Breadcrumbs>
 
           {!isEmpty(projectDetail) && (
             <>

@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import PropTypes from "prop-types"
+import { useNavigate } from "react-router-dom"
 
 // Importez vos composants comme avant
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -11,6 +12,15 @@ import SearchBar from "components/Common/Searchbar"
 import { Button } from "reactstrap"
 
 const DatatableTables = () => {
+  const [userRole, setUserRole] = useState(null)
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const authUser = JSON.parse(localStorage.getItem("authUser"))
+    const role = authUser ? authUser.role : null
+    setUserRole(role)
+  }, [])
   const [searchValue, setSearchValue] = useState("")
   const columns = useMemo(
     () => [
@@ -162,15 +172,25 @@ const DatatableTables = () => {
           <div
             style={{
               display: "flex",
-              justifyContent: "flex-end",
+              justifyContent: "space-between",
               alignItems: "center",
-              marginLeft: "16px"
+              width: "100%",
+              gap: "26px",
+
             }}
           >
             <SearchBar
               onSearch={setSearchValue}
-              style={{ width: "100%", maxWidth: "600px" }}
+              style={{ maxWidth: "600px" }}
             />
+            {userRole === "admin" && (
+              <Button
+                color="primary"
+                onClick={() => navigate("/add-client")} style={{ whiteSpace: "nowrap" }}
+              >
+                Ajouter un client
+              </Button>
+            )}
           </div>
         </Breadcrumbs>
         <TableContainer
