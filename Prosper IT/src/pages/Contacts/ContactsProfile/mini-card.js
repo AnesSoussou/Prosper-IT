@@ -6,8 +6,8 @@ const MiniCards = props => {
   const { title, text, iconClass } = props
   return (
     <React.Fragment>
-      <Col md="4">
-        <Card className="mini-stats-wid">
+      <Col md="6">
+        <Card className="mini-stats-wid" style={{ flexGrow: 1, flexShrink: 1 }}>
           <CardBody>
             <div className="d-flex">
               <div className="flex-grow-1">
@@ -26,6 +26,7 @@ const MiniCards = props => {
     </React.Fragment>
   )
 }
+
 
 MiniCards.propTypes = {
   iconClass: PropTypes.string,

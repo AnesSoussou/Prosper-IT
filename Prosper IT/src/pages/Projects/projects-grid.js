@@ -26,6 +26,9 @@ const ProjectsGrid = () => {
   document.title = "Mes Dossiers | Prosper iT";
 
   const dispatch = useDispatch();
+  // Initialisez isLoading avec une valeur par défaut.
+const [isLoading, setLoading] = useState(true);
+
 
   const ProjectsProjectProperties = createSelector(
     (state) => state.projects,
@@ -35,12 +38,19 @@ const ProjectsGrid = () => {
     })
   );
 
-  const {
-    loading, projects,
-  } = useSelector(ProjectsProjectProperties);
+  // const {
+  //   loading, projects,
+  // } = useSelector(ProjectsProjectProperties);
 
-  const [isLoading, setLoading] = useState(loading);
-  const [projectsList, setProjectsList] = useState();
+
+  // const [projectsList, setProjectsList] = useState();
+  const { loading, projects } = useSelector(ProjectsProjectProperties);
+
+  useEffect(() => {
+    setLoading(loading);
+  }, [loading]);
+  
+
 
   useEffect(() => {
     dispatch(onGetProjects());
@@ -51,11 +61,13 @@ const ProjectsGrid = () => {
   const perPageData = 9;
   const indexOfLast = currentPage * perPageData;
   const indexOfFirst = indexOfLast - perPageData;
-  const currentdata = useMemo(() => projects?.slice(indexOfFirst, indexOfLast), [projects, indexOfFirst, indexOfLast])
+// Calculer directement les projets à afficher
+const displayedProjects = useMemo(() => {
+  const indexOfLast = currentPage * perPageData;
+  const indexOfFirst = indexOfLast - perPageData;
+  return projects.slice(indexOfFirst, indexOfLast);
+}, [currentPage, perPageData, projects]);
 
-  useEffect(() => {
-    setProjectsList(currentdata);
-  }, [currentdata]);
 
   return (
     <React.Fragment>
@@ -70,7 +82,8 @@ const ProjectsGrid = () => {
               isLoading ? <Spinners setLoading={setLoading} />
                 :
                 <>
-                  <CardProject projects={projectsList} mode="projects" />
+                  <CardProject projects={displayedProjects} mode="projects" />
+
                   <Row>
                     <Paginations
                       perPageData={perPageData}
