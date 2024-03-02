@@ -69,6 +69,7 @@ const CardProject = ({ projects, mode }) => {
                   </Badge>
                   <Button
                     color="primary"
+                    className="btn btn-soft-info waves-effect waves-light btn btn-secondary"
                     href={`/projects-overview/${project.id}`}
                   >
                     Consulter
@@ -77,7 +78,7 @@ const CardProject = ({ projects, mode }) => {
               )}
               {mode === "services" && (
                 <>
-                  <Button color="secondary" href={`/projects-overview/${project.id}`}>Plus d’informations</Button>
+                  <Button color="secondary" className="btn btn-soft-info waves-effect waves-light btn btn-secondary" href={`/job-details`}>Plus d’informations</Button>
                   <div>
                     <Button color="info">Souscrire</Button>
                   </div>

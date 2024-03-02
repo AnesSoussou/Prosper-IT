@@ -244,7 +244,7 @@ const Prosper = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Prosper IT" breadcrumbItem="Prosper" />
+          <Breadcrumbs title="Prosper IT" breadcrumbItem="Développer votre Patrimoine" />
 
           <Row>
             <Col lg="12">

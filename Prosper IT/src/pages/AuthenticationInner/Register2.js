@@ -135,7 +135,7 @@ const Register2 = () => {
 
                           <div>
                             <p className="mb-0">
-                              By registering you agree to the Skote{" "}
+                              By registering you agree to the Prosper iT{" "}
                               <a href="#" className="text-primary">
                                 Terms of Use
                               </a>

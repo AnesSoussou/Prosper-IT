@@ -300,7 +300,7 @@ const ProjectsCreate = () => {
 
                 <Card>
                   <CardBody>
-                    <h5 className="card-title mb-3">Due Date</h5>
+                    <h5 className="card-title mb-3">Date de fin</h5>
                     <FlatPickr
                       className="form-control d-block"
                       id="orderdate"

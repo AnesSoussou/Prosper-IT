@@ -23,7 +23,7 @@ import Paginations from "components/Common/Pagination";
 const Services = () => {
 
   //meta title
-  document.title = "Mes Dossiers | Prosper iT";
+  document.title = "Services | Prosper iT";
 
   const dispatch = useDispatch();
 
@@ -62,7 +62,7 @@ const Services = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="Mes Dossiers" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Services" />
 
           <Row>
             {/* Import Cards */}

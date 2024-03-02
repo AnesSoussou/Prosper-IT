@@ -69,7 +69,7 @@ const CardInvoice = ({ data }) => {
                           placement="top"
                           target="duedateTooltip"
                         >
-                          Due Date
+                          Date de fin
                         </UncontrolledTooltip>
                       </h5>
                     </li>

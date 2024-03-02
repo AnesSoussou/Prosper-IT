@@ -267,7 +267,7 @@ const Chat = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="Développez votre Patrimoine" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Messages" />
 
           <Row>
             <Col lg="12">
@@ -382,46 +382,8 @@ const Chat = () => {
                                 </DropdownMenu>
                               </Dropdown>
                             </li>
-                            <li className="list-inline-item d-none d-sm-inline-block">
-                              <Dropdown
-                                isOpen={settings_Menu}
-                                toggle={toggleSettings}
-                                className="me-1"
-                              >
-                                <DropdownToggle className="btn nav-btn" tag="a">
-                                  <i className="bx bx-cog" />
-                                </DropdownToggle>
-                                <DropdownMenu>
-                                  <DropdownItem href="#">
-                                    View Profile
-                                  </DropdownItem>
-                                  <DropdownItem href="#">
-                                    Clear chat
-                                  </DropdownItem>
-                                  <DropdownItem href="#">Muted</DropdownItem>
-                                  <DropdownItem href="#">Delete</DropdownItem>
-                                </DropdownMenu>
-                              </Dropdown>
-                            </li>
-                            <li className="list-inline-item">
-                              <Dropdown
-                                isOpen={other_Menu}
-                                toggle={toggleOther}
-                              >
-                                <DropdownToggle className="btn nav-btn" tag="a">
-                                  <i className="bx bx-dots-horizontal-rounded" />
-                                </DropdownToggle>
-                                <DropdownMenu className="dropdown-menu-end">
-                                  <DropdownItem href="#">Action</DropdownItem>
-                                  <DropdownItem href="#">
-                                    Another Action
-                                  </DropdownItem>
-                                  <DropdownItem href="#">
-                                    Something else
-                                  </DropdownItem>
-                                </DropdownMenu>
-                              </Dropdown>
-                            </li>
+                            
+                            
                           </ul>
                         </Col>
                       </Row>

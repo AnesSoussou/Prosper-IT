@@ -68,7 +68,7 @@ const handleDeleteProject = (projectId) => {
           {/* Render Breadcrumbs */}
           <Breadcrumbs title="Prosper iT" breadcrumbItem="Détails dossier">
           {userRole === "admin" && (
-            <Button color="danger" onClick={() => handleDeleteProject(params.id)} className="ml-3" style={{marginLeft:"30px"}}>Supprimer</Button>
+            <Button onClick={() => handleDeleteProject(params.id)} className="btn btn-light waves-effect btn btn-light" style={{marginLeft:"985px"}}>Supprimer</Button>
           )}
           </Breadcrumbs>
 

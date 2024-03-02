@@ -163,12 +163,12 @@ const DatatableTables = () => {
     })
   }, [data, searchValue])
   //meta title
-  document.title = "Clients List | Skote - React Admin & Dashboard Template"
+  document.title = "Clients | Prosper iT"
 
   return (
     <div className="page-content">
       <div className="container-fluid">
-        <Breadcrumbs title="Prosper iT" breadcrumbItem="Clients List">
+        <Breadcrumbs title="Prosper iT" breadcrumbItem="Clients">
           <div
             style={{
               display: "flex",
