@@ -106,6 +106,7 @@ import IconFontawesome from "../pages/Icons/IconFontawesome";
 //Tables
 import BasicTables from "../pages/Tables/BasicTables";
 import DatatableTables from "../pages/Tables/DatatableTables";
+import AddClient from "../pages/Tables/AddClient";
 
 //Blog
 import BlogList from "../pages/Blog/BlogList/index";
@@ -274,6 +275,7 @@ const authProtectedRoutes = [
   // Tables
   { path: "/tables-basic", component: <BasicTables /> },
   { path: "/tables-datatable", component: <DatatableTables /> },
+  { path: "/add-client", component: <AddClient /> },
 
   // Maps
   { path: "/maps-google", component: <MapsGoogle /> },

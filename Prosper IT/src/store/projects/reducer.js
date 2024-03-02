@@ -9,6 +9,8 @@ import {
   UPDATE_PROJECT_FAIL,
   DELETE_PROJECT_SUCCESS,
   DELETE_PROJECT_FAIL,
+  DELETE_PROJECT
+  
 } from "./actionTypes";
 
 const INIT_STATE = {
@@ -73,6 +75,15 @@ const projects = (state = INIT_STATE, action) => {
           project => project.id.toString() !== action.payload.toString()
         ),
       };
+
+      case DELETE_PROJECT:
+        console.log('Current state of projects:', state.projects);
+        if (state.projects) {
+        return {
+          ...state,
+          projects: state.projects.filter(project => project.id !== action.payload),
+        };
+      }
 
     case DELETE_PROJECT_FAIL:
       return {

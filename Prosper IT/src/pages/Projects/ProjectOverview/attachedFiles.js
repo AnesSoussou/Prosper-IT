@@ -1,13 +1,27 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import { Card, CardBody, CardTitle, Table } from "reactstrap"
+import { Card, CardBody, CardTitle, Table, Button } from "reactstrap"
 import { Link } from "react-router-dom"
 
-const AttachedFiles = ({ files }) => {
+const AttachedFiles = ({ files, onAddFile, onDeleteFile }) => {
+  const [userRole, setUserRole] = useState(null)
+
+  useEffect(() => {
+    const authUser = JSON.parse(localStorage.getItem("authUser"))
+    const role = authUser ? authUser.role : null
+    setUserRole(role)
+  }, [])
+
   return (
     <Card>
       <CardBody>
-        <CardTitle className="mb-4">Documents</CardTitle>
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <CardTitle>Documents</CardTitle>
+            <Button color="primary" onClick={onAddFile}>
+              Ajouter
+            </Button>
+        </div>
+
         <div className="table-responsive">
           <Table className="table-nowrap align-middle table-hover mb-0">
             <tbody>
@@ -35,6 +49,13 @@ const AttachedFiles = ({ files }) => {
                       </Link>
                     </div>
                   </td>
+                    <td>
+                      <div className="text-center">
+                        <Button color="danger" onClick={() => onDeleteFile(i)}>
+                          <i className="bx bx-minus h10" />
+                        </Button>
+                      </div>
+                    </td>
                 </tr>
               ))}
             </tbody>
@@ -47,6 +68,8 @@ const AttachedFiles = ({ files }) => {
 
 AttachedFiles.propTypes = {
   files: PropTypes.array,
+  onAddFile: PropTypes.func.isRequired,
+  onDeleteFile: PropTypes.func.isRequired,
 }
 
 export default AttachedFiles

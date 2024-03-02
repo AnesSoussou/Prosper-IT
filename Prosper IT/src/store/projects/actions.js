@@ -55,10 +55,10 @@ export const updateProjectFail = error => ({
   payload: error,
 })
 
-export const deleteProject = project => ({
+export const deleteProject = (projectId) => ({
   type: DELETE_PROJECT,
-  payload: project,
-})
+  payload: projectId,
+});
 
 export const deleteProjectSuccess = project => ({
   type: DELETE_PROJECT_SUCCESS,
