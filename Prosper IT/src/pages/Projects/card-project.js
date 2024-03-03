@@ -57,7 +57,6 @@ const CardProject = ({ projects, mode }) => {
                     </Link>
                   </h5>
                   <p className="text-muted mb-4">{project.description}</p>
-                  
                 </div>
               </div>
             </CardBody>
@@ -68,6 +67,7 @@ const CardProject = ({ projects, mode }) => {
                     {project.status}
                   </Badge>
                   <Button
+                    className="btn btn-soft-info waves-effect waves-light btn btn-secondary"
                     color="primary"
                     href={`/projects-overview/${project.id}`}
                   >
@@ -77,7 +77,13 @@ const CardProject = ({ projects, mode }) => {
               )}
               {mode === "services" && (
                 <>
-                  <Button color="secondary" href={`/projects-overview/${project.id}`}>Plus d’informations</Button>
+                  <Button
+                    color="secondary"
+                    className="btn btn-soft-info waves-effect waves-light btn btn-secondary"
+                    href={`/job-details`}
+                  >
+                    Plus d’informations
+                  </Button>
                   <div>
                     <Button color="info">Souscrire</Button>
                   </div>

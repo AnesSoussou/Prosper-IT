@@ -1,26 +1,29 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import withRouter from "components/Common/withRouter";
-import { isEmpty } from "lodash";
-import { Button, Col, Container, Row } from "reactstrap";
+import React, { useEffect, useState } from "react"
+import PropTypes from "prop-types"
+import withRouter from "components/Common/withRouter"
+import { isEmpty } from "lodash"
+import { Button, Col, Container, Row } from "reactstrap"
 
 //Import Breadcrumb
-import Breadcrumbs from "components/Common/Breadcrumb";
+import Breadcrumbs from "components/Common/Breadcrumb"
 
-import { deleteProject, getProjectsSuccess, getProjectDetail as onGetProjectDetail } from "store/projects/actions";
-import ProjectDetail from "./projectDetail";
-import { options, series } from "common/data/projects";
-import AttachedFiles from "./attachedFiles";
+import {
+  deleteProject,
+  getProjectsSuccess,
+  getProjectDetail as onGetProjectDetail,
+} from "store/projects/actions"
+import ProjectDetail from "./projectDetail"
+import { options, series } from "common/data/projects"
+import AttachedFiles from "./attachedFiles"
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
-import { createSelector } from "reselect";
-import Notifications from "pages/Dashboard-crypto/notifications";
-import AddedJobs from "pages/DashboardJob/AddedJobs";
-import ChantBox from "pages/Dashboard-saas/chat-box";
+import { useSelector, useDispatch } from "react-redux"
+import { createSelector } from "reselect"
+import Notifications from "pages/Dashboard-crypto/notifications"
+import AddedJobs from "pages/DashboardJob/AddedJobs"
+import ChantBox from "pages/Dashboard-saas/chat-box"
 
 const ProjectsOverview = props => {
-
   const [userRole, setUserRole] = useState(null)
 
   useEffect(() => {
@@ -30,36 +33,33 @@ const ProjectsOverview = props => {
   }, [])
 
   //meta title
-  document.title = "Détails dossier | Prosper iT";
+  document.title = "Détails dossier | Prosper iT"
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const ProjectsDetailProperties = createSelector(
-    (state) => state.projects,
-      (Projects) => ({
-        projectDetail: Projects.projectDetail
-      })
-  );
+    state => state.projects,
+    Projects => ({
+      projectDetail: Projects.projectDetail,
+    })
+  )
 
-  const {
-    projectDetail
-  } = useSelector(ProjectsDetailProperties);
+  const { projectDetail } = useSelector(ProjectsDetailProperties)
 
-  const params = props.router.params;
+  const params = props.router.params
 
   useEffect(() => {
     if (params && params.id) {
-      dispatch(onGetProjectDetail(params.id));
+      dispatch(onGetProjectDetail(params.id))
     } else {
-      dispatch(onGetProjectDetail(1));
+      dispatch(onGetProjectDetail(1))
     }
-  }, [onGetProjectDetail]);
+  }, [onGetProjectDetail])
 
-const handleDeleteProject = (projectId) => {
-  dispatch(deleteProject(projectId));
-  dispatch(getProjectsSuccess());
-};
-
+  const handleDeleteProject = projectId => {
+    dispatch(deleteProject(projectId))
+    dispatch(getProjectsSuccess())
+  }
 
   return (
     <React.Fragment>
@@ -67,9 +67,15 @@ const handleDeleteProject = (projectId) => {
         <Container fluid>
           {/* Render Breadcrumbs */}
           <Breadcrumbs title="Prosper iT" breadcrumbItem="Détails dossier">
-          {userRole === "admin" && (
-            <Button color="danger" onClick={() => handleDeleteProject(params.id)} className="ml-3" style={{marginLeft:"30px"}}>Supprimer</Button>
-          )}
+            {userRole === "admin" && (
+              <Button
+                onClick={() => handleDeleteProject(params.id)}
+                className="btn btn-light waves-effect btn btn-light"
+                style={{ marginLeft: "985px" }}
+              >
+                Supprimer
+              </Button>
+            )}
           </Breadcrumbs>
 
           {!isEmpty(projectDetail) && (
@@ -80,11 +86,11 @@ const handleDeleteProject = (projectId) => {
                 </Col>
 
                 <Col lg="4">
-                 <AttachedFiles files={projectDetail.files} />
+                  <AttachedFiles files={projectDetail.files} />
                 </Col>
               </Row>
 
-              <Row >
+              <Row>
                 <Col lg="8">
                   <ChantBox comments={projectDetail.comments} />
                 </Col>
@@ -97,11 +103,11 @@ const handleDeleteProject = (projectId) => {
         </Container>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
 ProjectsOverview.propTypes = {
   match: PropTypes.object,
-};
+}
 
-export default withRouter(ProjectsOverview);
+export default withRouter(ProjectsOverview)

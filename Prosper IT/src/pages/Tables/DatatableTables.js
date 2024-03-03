@@ -14,7 +14,7 @@ import { Button } from "reactstrap"
 const DatatableTables = () => {
   const [userRole, setUserRole] = useState(null)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
     const authUser = JSON.parse(localStorage.getItem("authUser"))
@@ -163,12 +163,12 @@ const DatatableTables = () => {
     })
   }, [data, searchValue])
   //meta title
-  document.title = "Clients List | Skote - React Admin & Dashboard Template"
+  document.title = "Clients | Prosper iT"
 
   return (
     <div className="page-content">
       <div className="container-fluid">
-        <Breadcrumbs title="Prosper iT" breadcrumbItem="Clients List">
+        <Breadcrumbs title="Prosper iT" breadcrumbItem="Clients">
           <div
             style={{
               display: "flex",
@@ -176,7 +176,6 @@ const DatatableTables = () => {
               alignItems: "center",
               width: "100%",
               gap: "26px",
-
             }}
           >
             <SearchBar
@@ -186,7 +185,8 @@ const DatatableTables = () => {
             {userRole === "admin" && (
               <Button
                 color="primary"
-                onClick={() => navigate("/add-client")} style={{ whiteSpace: "nowrap" }}
+                onClick={() => navigate("/add-client")}
+                style={{ whiteSpace: "nowrap" }}
               >
                 Ajouter un client
               </Button>

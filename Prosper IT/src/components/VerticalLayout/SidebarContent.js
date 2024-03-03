@@ -176,41 +176,6 @@ const SidebarContent = props => {
                     <span>{props.t("Clients")}</span>
                   </Link>
                 </li>
-
-                <li>
-                  <Link to="/tables-datatable">
-                    <i className="bx bxs-copy-alt"></i>
-                    <span>{props.t("Partenaires")}</span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/tables-datatable">
-                    <i className="bx bxs-copy-alt"></i>
-                    <span>{props.t("Mails")}</span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/tables-datatable">
-                    <i className="bx bxs-copy-alt"></i>
-                    <span>{props.t("Documents")}</span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/tables-datatable">
-                    <i className="bx bxs-copy-alt"></i>
-                    <span>{props.t("Factures")}</span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/tables-datatable">
-                    <i className="bx bxs-copy-alt"></i>
-                    <span>{props.t("Dashboard")}</span>
-                  </Link>
-                </li>
               </>
             )}
 
@@ -225,13 +190,6 @@ const SidebarContent = props => {
               <Link to="/services">
                 <i className="bx bxs-star"></i>
                 <span>{props.t("Services")}</span>
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/job-details">
-                <i className="bx bxs-copy-alt"></i>
-                <span>{props.t("Service")}</span>
               </Link>
             </li>
 

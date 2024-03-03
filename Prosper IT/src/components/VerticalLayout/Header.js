@@ -186,12 +186,6 @@ const Header = props => {
               }}
               className="dropdown d-inline-block"
             >
-              <button
-                type="button"
-                className="btn header-item noti-icon right-bar-toggle "
-              >
-                <i className="bx bx-cog bx-spin" />
-              </button>
             </div>
           </div>
         </div>

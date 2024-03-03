@@ -37,19 +37,18 @@ const ProjectDetail = ({ project }) => {
           <Col sm="4" xs="6">
             <div className="mt-4">
               <h5 className="font-size-14">
-                <i className="bx bx-calendar me-1 text-primary" /> Start Date
+              <i className="bx bx-calendar me-1 text-primary" /> Date de départ
               </h5>
-              <p className="text-muted mb-0">08 Sept, 2019</p>
+              <p className="text-muted mb-0">08 Janvier 2024</p>
             </div>
           </Col>
 
           <Col sm="4" xs="6">
             <div className="mt-4">
               <h5 className="font-size-14">
-                <i className="bx bx-calendar-check me-1 text-primary" /> Due
-                Date
+              <i className="bx bx-calendar-check me-1 text-primary" /> Date de fin
               </h5>
-              <p className="text-muted mb-0">12 Oct, 2019</p>
+              <p className="text-muted mb-0">12 Octobre 2029</p>
             </div>
           </Col>
         </Row>

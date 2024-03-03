@@ -17,9 +17,14 @@ const AttachedFiles = ({ files, onAddFile, onDeleteFile }) => {
       <CardBody>
         <div className="d-flex justify-content-between align-items-center mb-4">
           <CardTitle>Documents</CardTitle>
-            <Button color="primary" onClick={onAddFile}>
-              Ajouter
-            </Button>
+          <Button
+            color="primary"
+            btn
+            className="btn-rounded btn btn-info"
+            onClick={onAddFile}
+          >
+            +
+          </Button>
         </div>
 
         <div className="table-responsive">
@@ -44,18 +49,23 @@ const AttachedFiles = ({ files, onAddFile, onDeleteFile }) => {
                   </td>
                   <td>
                     <div className="text-center">
-                      <Link to={file.link} className="text-dark">
-                        <i className="bx bx-download h3 m-0" />
+                      <Link to={file.link} className="w-sm btn btn-light">
+                        <i className="mdi mdi-download d-block font-size-16" />
                       </Link>
                     </div>
                   </td>
-                    <td>
-                      <div className="text-center">
-                        <Button color="danger" onClick={() => onDeleteFile(i)}>
-                          <i className="bx bx-minus h10" />
-                        </Button>
-                      </div>
-                    </td>
+                  <td>
+                    <div className="text-center">
+                      <Button
+                        color="primary"
+                        btn
+                        className="btn-soft-danger waves-effect waves-light btn btn-secondary"
+                        onClick={onAddFile}
+                      >
+                        -
+                      </Button>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>

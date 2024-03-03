@@ -23,7 +23,7 @@ import Paginations from "components/Common/Pagination";
 const ProjectsGrid = () => {
 
   //meta title
-  document.title = "Mes Dossiers | Prosper iT";
+  document.title = "Dossiers | Prosper iT";
 
   const dispatch = useDispatch();
   // Initialisez isLoading avec une valeur par défaut.
@@ -74,7 +74,7 @@ const displayedProjects = useMemo(() => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="Mes Dossiers" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Dossiers" />
 
           <Row>
             {/* Import Cards */}

@@ -195,7 +195,7 @@ const Register = props => {
 
                       <div className="mt-4 text-center">
                         <p className="mb-0">
-                          By registering you agree to the Skote{" "}
+                        By registering you agree to the Prosper iT
                           <Link to="#" className="text-primary">
                             Terms of Use
                           </Link>

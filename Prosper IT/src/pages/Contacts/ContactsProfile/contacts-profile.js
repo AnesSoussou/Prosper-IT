@@ -127,6 +127,7 @@ const ContactsProfile = props => {
                     </CardTitle>
                     <Button
                       color="primary"
+                      className="btn btn-soft-secondary waves-effect waves-light btn btn-secondary"
                       style={{
                         position: "absolute",
                         top: "10px",
@@ -171,6 +172,7 @@ const ContactsProfile = props => {
                   </CardTitle>
                   <Button
                     color="primary"
+                    className="btn btn-soft-secondary waves-effect waves-light btn btn-secondary"
                     style={{
                       position: "absolute",
                       top: "15px",
