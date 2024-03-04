@@ -94,7 +94,7 @@ const ChantBox = () => {
               <Col md="4" xs="9">
                 <h5 className="font-size-15 mb-1">Steven Franklin</h5>
                 <p className="text-muted mb-0">
-                  <i className="mdi mdi-circle text-success align-middle me-1" />{" "}
+                  <i className="mdi mdi-circle text-success align-middle me-1" />
                   Active now
                 </p>
               </Col>
@@ -194,7 +194,7 @@ const ChantBox = () => {
                   className="chat-send w-md "
                   onClick={() => onSendMessage()}
                 >
-                  <span className="d-none d-sm-inline-block me-2">Send</span>{" "}
+                  <span className="d-none d-sm-inline-block me-2">Send</span>
                   <i className="mdi mdi-send" />
                 </Button>
               </div>

@@ -207,10 +207,9 @@ const Register = props => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  Already have an account ?{" "} <Link to="/login" className="font-weight-medium text-primary">
-                    {" "}
+                  Already have an account ? <Link to="/login" className="font-weight-medium text-primary">
                     Login
-                  </Link>{" "}
+                  </Link>
                 </p>
                 <p>
                   © {new Date().getFullYear()} Prosper iT

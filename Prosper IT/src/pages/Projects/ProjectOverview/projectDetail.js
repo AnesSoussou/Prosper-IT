@@ -27,7 +27,7 @@ const ProjectDetail = ({ project }) => {
           {project.projectDetails &&
             (project.projectDetails.points || [])?.map((point, index) => (
               <p key={index}>
-                <i className="mdi mdi-chevron-right text-primary me-1" />{" "}
+                <i className="mdi mdi-chevron-right text-primary me-1" />
                 {point}
               </p>
             ))}

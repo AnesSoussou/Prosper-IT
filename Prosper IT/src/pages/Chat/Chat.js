@@ -518,7 +518,7 @@ const Chat = () => {
                             >
                               <span className="d-none d-sm-inline-block me-2">
                                 Send
-                              </span>{" "}
+                              </span>
                               <i className="mdi mdi-send" />
                             </Button>
                           </Col>
