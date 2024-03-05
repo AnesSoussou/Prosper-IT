@@ -194,13 +194,6 @@ const SidebarContent = props => {
             </li>
 
             <li>
-              <Link to="/contacts-profile">
-                <i className="bx bxs-user-circle"></i>
-                <span>{props.t("Profile")}</span>
-              </Link>
-            </li>
-
-            <li>
               <Link to="/pages-faqs">
                 <i className="bx bxs-buoy"></i>
                 <span>{props.t("Aide")}</span>
