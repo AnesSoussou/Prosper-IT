@@ -123,7 +123,7 @@ const ContactsProfile = props => {
                 <CardBody>
                   <div style={{ position: "relative" }}>
                     <CardTitle className="mb-4">
-                      Informations personnelles
+                      Coordonnées
                     </CardTitle>
                     <Button
                       color="primary"
@@ -168,7 +168,7 @@ const ContactsProfile = props => {
               <Card>
                 <CardBody>
                   <CardTitle className="mb-4">
-                    Informations professionnelles
+                    Informations personnelles
                   </CardTitle>
                   <Button
                     color="primary"

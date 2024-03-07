@@ -13,7 +13,7 @@ import Storage from "./Storage";
 const Index = () => {
 
   //meta title
-  document.title = "File Manager | Skote - React Admin & Dashboard Template";
+  document.title = "Documents | Prosper iT";
 
   const series = [76]
   const options = {
@@ -64,7 +64,7 @@ const Index = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <Breadcrumbs title="Apps" breadcrumbItem="File Manager" />
+          <Breadcrumbs title="Apps" breadcrumbItem="Documents" />
           <div className="d-xl-flex">
             <div className="w-100">
               <div className="d-md-flex">
