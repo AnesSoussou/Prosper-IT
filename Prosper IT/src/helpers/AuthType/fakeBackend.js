@@ -53,14 +53,14 @@ let users = [
     username: "client",
     role: "client",
     password: "123456",
-    email: "client@themesbrand.com",
+    email: "client@prosperit.com",
   },
   {
     uid: 2,
     username: "admin",
     role: "admin",
     password: "123456",
-    email: "admin@themesbrand.com",
+    email: "admin@prosperit.com",
   },
 ]
 
