@@ -155,6 +155,13 @@ const SidebarContent = props => {
             <li className="menu-title">{props.t("Menu")} </li>
 
             <li>
+              <Link to="/dashboard">
+                <i className="fas fa-chart-bar"></i>
+                <span>{props.t("Dashboard")}</span>
+              </Link>
+            </li>
+
+            <li>
               <Link to="/Prosper">
                 <i className="bx bxs-magic-wand"></i>
                 <span>{props.t("Prosper")}</span>
@@ -167,17 +174,6 @@ const SidebarContent = props => {
                 <span>{props.t("Dossiers")}</span>
               </Link>
             </li>
-
-            {userRole === "admin" && (
-              <>
-                <li>
-                  <Link to="/tables-datatable">
-                    <i className="bx bxs-user-detail"></i>
-                    <span>{props.t("Clients")}</span>
-                  </Link>
-                </li>
-              </>
-            )}
 
             <li>
               <Link to="/chat">
@@ -192,6 +188,47 @@ const SidebarContent = props => {
                 <span>{props.t("Services")}</span>
               </Link>
             </li>
+
+            {userRole === "admin" && (
+              <>
+                <li>
+                  <Link to="/tables-datatable">
+                    <i className="bx bxs-user-detail"></i>
+                    <span>{props.t("Clients")}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tables-datatable">
+                    <i className="mdi mdi-handshake"></i>
+                    <span>{props.t("Prestataires")}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tables-datatable">
+                    <i className="bx bxs-user-pin"></i>
+                    <span>{props.t("Contacts")}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/calendar">
+                    <i className="mdi mdi-calendar"></i>
+                    <span>{props.t("Calendrier")}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/apps-filemanager">
+                    <i className="mdi mdi-file-document-multiple"></i>
+                    <span>{props.t("Documents")}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/email-inbox">
+                    <i className="mdi mdi-email"></i>
+                    <span>{props.t("Emails")}</span>
+                  </Link>
+                </li>
+              </>
+            )}
 
             <li>
               <Link to="/pages-faqs">

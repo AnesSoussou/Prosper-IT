@@ -35,7 +35,7 @@ import { createSelector } from "reselect";
 const Calender = props => {
 
   //meta title
-  document.title = "Calendar | Skote - React Admin & Dashboard Template";
+  document.title = "Calendrier | Prosper iT";
 
   const dispatch = useDispatch();
 
@@ -252,7 +252,7 @@ const Calender = props => {
       <div className="page-content">
         <Container fluid={true}>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Calendar" breadcrumbItem="Full Calendar" />
+          <Breadcrumbs title="Calendar" breadcrumbItem="Calendrier" />
           <Row>
             <Col xs={12}>
               <Row>
