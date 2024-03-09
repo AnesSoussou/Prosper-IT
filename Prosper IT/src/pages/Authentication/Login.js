@@ -32,7 +32,7 @@ const Login = props => {
     enableReinitialize: true,
 
     initialValues: {
-      email: "admin@themesbrand.com" || '',
+      email: "admin@prosperit.com" || '',
       password: "123456" || '',
     },
     validationSchema: Yup.object({
@@ -43,7 +43,7 @@ const Login = props => {
       console.log("Tentative de connexion avec", values);
       dispatch(loginUser(values, props.router.navigate));
     }
-    
+
   });
 
 
@@ -82,7 +82,7 @@ const Login = props => {
                     <Col className="col-7">
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Bienvenue !</h5>
-                        <p>Sign in to continue to Prosper iT.</p>
+                        <p>Inscrivez-vous pour profiter de services exclusifs</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -171,6 +171,7 @@ const Login = props => {
                         <button
                           className="btn btn-primary btn-block"
                           type="submit"
+                          
                         >
                           Log In
                         </button>

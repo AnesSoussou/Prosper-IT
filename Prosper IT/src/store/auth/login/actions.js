@@ -8,7 +8,13 @@ import {
 } from "./actionTypes"
 
 export const loginUser = (user, history) => {
-  console.log("Réponse du serveur pour la connexion", user);
+  console.log("loginUser::Réponse du serveur pour la connexion", user);
+  // const validUser = users.filter(
+  //   usr => usr.email === user.email && usr.password === user.password
+  // )
+  // if (validUser.length) {
+  //   localStorage.setItem("authUser", (JSON.stringify(validUser[0])));
+  // }
   return {
     type: LOGIN_USER,
     payload: { user, history },
@@ -16,6 +22,7 @@ export const loginUser = (user, history) => {
 }
 
 export const loginSuccess = user => {
+  console.log("loginSuccess::Réponse du serveur pour la connexion", user);
   return {
     type: LOGIN_SUCCESS,
     payload: user,
