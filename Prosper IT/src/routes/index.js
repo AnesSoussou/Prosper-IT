@@ -95,7 +95,7 @@ import ChartsKnob from "../pages/Charts/charts-knob";
 import ReCharts from "../pages/Charts/ReCharts";
 
 // Maps
-import MapsGoogle from "../pages/Maps/MapsGoogle";
+// import MapsGoogle from "../pages/Maps/MapsGoogle";
 
 //Icons
 import IconBoxicons from "../pages/Icons/IconBoxicons";
@@ -143,7 +143,7 @@ import UiDropdown from "../pages/Ui/UiDropdown";
 import UiGeneral from "../pages/Ui/UiGeneral";
 import UiGrid from "../pages/Ui/UiGrid";
 import UiImages from "../pages/Ui/UiImages";
-import UiLightbox from "../pages/Ui/UiLightbox";
+// import UiLightbox from "../pages/Ui/UiLightbox";
 import UiModal from "../pages/Ui/UiModal";
 import UiProgressbar from "../pages/Ui/UiProgressbar";
 import UiTabsAccordions from "../pages/Ui/UiTabsAccordions";
@@ -151,7 +151,7 @@ import UiTypography from "../pages/Ui/UiTypography";
 import UiVideo from "../pages/Ui/UiVideo";
 import UiSessionTimeout from "../pages/Ui/UiSessionTimeout";
 import UiRating from "../pages/Ui/UiRating";
-import UiRangeSlider from "../pages/Ui/UiRangeSlider";
+// import UiRangeSlider from "../pages/Ui/UiRangeSlider";
 import UiNotifications from "../pages/Ui/ui-notifications";
 import UiOffCanvas from "pages/Ui/UiOffCanvas";
 import UiUtilitie from "../pages/Ui/UiUtilitie";
@@ -278,7 +278,7 @@ const authProtectedRoutes = [
   { path: "/add-client", component: <AddClient /> },
 
   // Maps
-  { path: "/maps-google", component: <MapsGoogle /> },
+  // { path: "/maps-google", component: <MapsGoogle /> },
 
   // Forms
   { path: "/form-elements", component: <FormElements /> },
@@ -301,7 +301,7 @@ const authProtectedRoutes = [
   { path: "/ui-general", component: <UiGeneral /> },
   { path: "/ui-grid", component: <UiGrid /> },
   { path: "/ui-images", component: <UiImages /> },
-  { path: "/ui-lightbox", component: <UiLightbox /> },
+  // { path: "/ui-lightbox", component: <UiLightbox /> },
   { path: "/ui-modals", component: <UiModal /> },
   { path: "/ui-progressbars", component: <UiProgressbar /> },
   { path: "/ui-tabs-accordions", component: <UiTabsAccordions /> },
@@ -309,7 +309,7 @@ const authProtectedRoutes = [
   { path: "/ui-video", component: <UiVideo /> },
   { path: "/ui-session-timeout", component: <UiSessionTimeout /> },
   { path: "/ui-rating", component: <UiRating /> },
-  { path: "/ui-rangeslider", component: <UiRangeSlider /> },
+  // { path: "/ui-rangeslider", component: <UiRangeSlider /> },
   { path: "/ui-notifications", component: <UiNotifications /> },
   { path: "/ui-offcanvas", component: <UiOffCanvas /> },
   { path: "/ui-utilities", component: <UiUtilitie /> },
