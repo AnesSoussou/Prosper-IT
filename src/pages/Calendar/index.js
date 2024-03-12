@@ -249,73 +249,14 @@ const Calender = props => {
         onDeleteClick={handleDeleteEvent}
         onCloseClick={() => setDeleteModal(false)}
       />
-      <div className="page-content">
+      <div className="page-content" id="external-events">
         <Container fluid={true}>
           {/* Render Breadcrumb */}
           <Breadcrumbs title="Calendar" breadcrumbItem="Calendrier" />
           <Row>
             <Col xs={12}>
               <Row>
-                <Col xl={3}>
-                  <Card>
-                    <CardBody>
-                      <div className="d-flex gap-2">
-                        <div className="flex-grow-1">
-                          <select
-                            id="locale-selector"
-                            className="form-select"
-                            defaultValue={isLocal}
-                            onChange={(event) => {
-                              const selectedValue = event.target.value;
-                              const selectedLocale =
-                                allLocales.find((locale) => locale.code === selectedValue);
-                              handleChangeLocals(selectedLocale);
-                            }}
-                          >
-                            {(allLocales || [])?.map((localeCode, key) => (
-                              <option key={key} value={localeCode.code}>
-                                {localeCode.code}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                        <Button
-                          color="primary"
-                          className="font-16"
-                          onClick={toggle}
-                        >
-                          <i className="mdi mdi-plus-circle-outline me-1" />
-                          Create New Event
-                        </Button>
-                      </div>
-
-                      <div id="external-events" className="mt-2">
-                        <br />
-                        <p className="text-muted">
-                          Drag and drop your event or click in the calendar
-                        </p>
-                        {categories &&
-                          (categories || [])?.map((category) => (
-                            <div
-                              className={`${category.type} external-event fc-event text-white`}
-                              key={"cat-" + category.id}
-                              draggable
-                              onDrag={event => onDrag(event, category)}
-                            >
-                              <i className="mdi mdi-checkbox-blank-circle font-size-11 me-2" />
-                              {category.title}
-                            </div>
-                          ))}
-                      </div>
-
-                      <Row className="justify-content-center mt-5">
-                        <img src={verification} alt="" className="img-fluid d-block" />
-                      </Row>
-                    </CardBody>
-                  </Card>
-                </Col>
-
-                <Col xl={9}>
+                <Col xl={12}>
                   <Card>
                     <CardBody>
                       {/* fullcalendar control */}

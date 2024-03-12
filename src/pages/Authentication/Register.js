@@ -21,7 +21,7 @@ import logoImg from "../../assets/images/favicon.png";
 const Register = props => {
 
   //meta title
-  document.title = "Register | Skote - React Admin & Dashboard Template";
+  document.title = "Inscription | Prosper iT";
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

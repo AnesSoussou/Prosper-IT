@@ -33,7 +33,7 @@ import logo from "assets/images/favicon.png"
 
 const Login = props => {
   //meta title
-  document.title = "Login | Skote - React Admin & Dashboard Template"
+  document.title = "Connexion | Prosper iT"
 
   const dispatch = useDispatch()
 
