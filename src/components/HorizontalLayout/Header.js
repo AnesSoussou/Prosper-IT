@@ -16,7 +16,7 @@ import NotificationDropdown from "../CommonForBoth/TopbarDropdown/NotificationDr
 import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu";
 
 import megamenuImg from "../../assets/images/megamenu-img.png";
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/favicon.png";
 import logoLight from "../../assets/images/logo-light.png";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.png";
@@ -79,9 +79,9 @@ const Header = props => {
               </Link>
 
               <Link to="/" className="logo logo-light">
-                <span className="logo-sm">
+                {/* <span className="logo-sm">
                   <img src={logoLightSvg} alt="" height="22" />
-                </span>
+                </span> */}
                 <span className="logo-lg">
                   <img src={logoLight} alt="" height="19" />
                 </span>

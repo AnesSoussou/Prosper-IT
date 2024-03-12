@@ -1,71 +1,77 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from "prop-types"
+import React from "react"
 
-import { Row, Col, CardBody, Card, Alert, Container, Form, Input, FormFeedback, Label } from "reactstrap";
+import {
+  Row,
+  Col,
+  CardBody,
+  Card,
+  Alert,
+  Container,
+  Form,
+  Input,
+  FormFeedback,
+  Label,
+} from "reactstrap"
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
-import { createSelector } from "reselect";
-import { Link } from "react-router-dom";
-import withRouter from "components/Common/withRouter";
+import { useSelector, useDispatch } from "react-redux"
+import { createSelector } from "reselect"
+import { Link } from "react-router-dom"
+import withRouter from "components/Common/withRouter"
 
 // Formik validation
-import * as Yup from "yup";
-import { useFormik } from "formik";
+import * as Yup from "yup"
+import { useFormik } from "formik"
 
 // actions
-import { loginUser, socialLogin } from "../../store/actions";
+import { loginUser, socialLogin } from "../../store/actions"
 
 // import images
-import profile from "assets/images/profile-img.png";
-import logo from "assets/images/logo.svg";
+import profile from "assets/images/profile-img.png"
+import logo from "assets/images/favicon.png"
 
 const Login = props => {
-
   //meta title
-  document.title = "Login | Skote - React Admin & Dashboard Template";
+  document.title = "Login | Skote - React Admin & Dashboard Template"
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const validation = useFormik({
     // enableReinitialize : use this  flag when initial values needs to be changed
     enableReinitialize: true,
 
     initialValues: {
-      email: "admin@prosperit.com" || '',
-      password: "123456" || '',
+      email: "admin@prosperit.com" || "",
+      password: "123456" || "",
     },
     validationSchema: Yup.object({
       email: Yup.string().required("Please Enter Your Email"),
       password: Yup.string().required("Please Enter Your Password"),
     }),
-    onSubmit: (values) => {
-      console.log("Tentative de connexion avec", values);
-      dispatch(loginUser(values, props.router.navigate));
-    }
-
-  });
-
+    onSubmit: values => {
+      console.log("Tentative de connexion avec", values)
+      dispatch(loginUser(values, props.router.navigate))
+    },
+  })
 
   const LoginProperties = createSelector(
-    (state) => state.Login,
-    (login) => ({
-      error: login.error
+    state => state.Login,
+    login => ({
+      error: login.error,
     })
-  );
+  )
 
-  const {
-    error
-  } = useSelector(LoginProperties);
+  const { error } = useSelector(LoginProperties)
 
   const signIn = type => {
-    dispatch(socialLogin(type, props.router.navigate));
-  };
+    dispatch(socialLogin(type, props.router.navigate))
+  }
 
   //for facebook and google authentication
   const socialResponse = type => {
-    signIn(type);
-  };
+    signIn(type)
+  }
 
   //handleTwitterLoginResponse
   // const twitterResponse = e => {}
@@ -82,7 +88,9 @@ const Login = props => {
                     <Col className="col-7">
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Bienvenue !</h5>
-                        <p>Inscrivez-vous pour profiter de services exclusifs</p>
+                        <p>
+                          Inscrivez-vous pour profiter de services exclusifs
+                        </p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -108,10 +116,10 @@ const Login = props => {
                   <div className="p-2">
                     <Form
                       className="form-horizontal"
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        validation.handleSubmit();
-                        return false;
+                      onSubmit={e => {
+                        e.preventDefault()
+                        validation.handleSubmit()
+                        return false
                       }}
                     >
                       {error ? <Alert color="danger">{error}</Alert> : null}
@@ -127,11 +135,15 @@ const Login = props => {
                           onBlur={validation.handleBlur}
                           value={validation.values.email || ""}
                           invalid={
-                            validation.touched.email && validation.errors.email ? true : false
+                            validation.touched.email && validation.errors.email
+                              ? true
+                              : false
                           }
                         />
                         {validation.touched.email && validation.errors.email ? (
-                          <FormFeedback type="invalid">{validation.errors.email}</FormFeedback>
+                          <FormFeedback type="invalid">
+                            {validation.errors.email}
+                          </FormFeedback>
                         ) : null}
                       </div>
 
@@ -145,11 +157,17 @@ const Login = props => {
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
                           invalid={
-                            validation.touched.password && validation.errors.password ? true : false
+                            validation.touched.password &&
+                            validation.errors.password
+                              ? true
+                              : false
                           }
                         />
-                        {validation.touched.password && validation.errors.password ? (
-                          <FormFeedback type="invalid">{validation.errors.password}</FormFeedback>
+                        {validation.touched.password &&
+                        validation.errors.password ? (
+                          <FormFeedback type="invalid">
+                            {validation.errors.password}
+                          </FormFeedback>
                         ) : null}
                       </div>
 
@@ -171,7 +189,6 @@ const Login = props => {
                         <button
                           className="btn btn-primary btn-block"
                           type="submit"
-                          
                         >
                           Log In
                         </button>
@@ -180,7 +197,7 @@ const Login = props => {
                       <div className="mt-4 text-center">
                         <Link to="/forgot-password" className="text-muted">
                           <i className="mdi mdi-lock me-1" />
-                          Forgot your password?
+                          Mot de passe oublié?
                         </Link>
                       </div>
                     </Form>
@@ -189,25 +206,24 @@ const Login = props => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  Don&#39;t have an account ?{" "} <Link to="/register" className="fw-medium text-primary">
-                    {" "}
-                    Signup now{" "}
-                  </Link>{" "}
+                  Vous n'avez pas de compte ?
+                  <Link to="/register" className="fw-medium text-primary">
+                    
+                    S'inscrire
+                  </Link>
                 </p>
-                <p>
-                  © {new Date().getFullYear()} Prosper iT
-                </p>
+                <p>© {new Date().getFullYear()} Prosper iT</p>
               </div>
             </Col>
           </Row>
         </Container>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default withRouter(Login);
+export default withRouter(Login)
 
 Login.propTypes = {
   history: PropTypes.object,
-};
+}

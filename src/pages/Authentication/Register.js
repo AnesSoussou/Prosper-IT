@@ -16,7 +16,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 // import images
 import profileImg from "../../assets/images/profile-img.png";
-import logoImg from "../../assets/images/logo.svg";
+import logoImg from "../../assets/images/favicon.png";
 
 const Register = props => {
 
@@ -86,8 +86,8 @@ const Register = props => {
                   <Row>
                     <Col className="col-7">
                       <div className="text-primary p-4">
-                        <h5 className="text-primary">Free Register</h5>
-                        <p>Get your free Skote account now.</p>
+                        <h5 className="text-primary">Inscription Gratuite</h5>
+                        <p>Inscrivez-vous pour profiter de services exclusifs</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -135,7 +135,7 @@ const Register = props => {
                           id="email"
                           name="email"
                           className="form-control"
-                          placeholder="Enter email"
+                          placeholder="Entrer email"
                           type="email"
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
@@ -154,7 +154,7 @@ const Register = props => {
                         <Input
                           name="username"
                           type="text"
-                          placeholder="Enter username"
+                          placeholder="Entrer le nom d'utilisateur"
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
                           value={validation.values.username || ""}
@@ -167,11 +167,11 @@ const Register = props => {
                         ) : null}
                       </div>
                       <div className="mb-3">
-                        <Label className="form-label">Password</Label>
+                        <Label className="form-label">Mot de passe</Label>
                         <Input
                           name="password"
                           type="password"
-                          placeholder="Enter Password"
+                          placeholder="Entrer le Mot de passe"
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
                           value={validation.values.password || ""}
@@ -189,16 +189,13 @@ const Register = props => {
                           className="btn btn-primary btn-block "
                           type="submit"
                         >
-                          Register
+                         S'inscrire
                         </button>
                       </div>
 
                       <div className="mt-4 text-center">
                         <p className="mb-0">
-                        By registering you agree to the Prosper iT
-                          <Link to="#" className="text-primary">
-                            Terms of Use
-                          </Link>
+                        En vous inscrivant, vous acceptez les  <Link to="#" className="text-primary">conditions d'utilisation</Link> de Properit
                         </p>
                       </div>
                     </Form>
@@ -207,8 +204,8 @@ const Register = props => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  Already have an account ? <Link to="/login" className="font-weight-medium text-primary">
-                    Login
+                Vous avez déjà un compte ?  <Link to="/login" className="font-weight-medium text-primary">
+                Se connecter
                   </Link>
                 </p>
                 <p>

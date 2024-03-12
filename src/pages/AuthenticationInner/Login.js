@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 
 // import images
 import profile from "../../assets/images/profile-img.png";
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/favicon.png";
 import lightlogo from "../../assets/images/logo-light.svg";
 
 const Login = () => {
