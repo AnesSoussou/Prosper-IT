@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import withRouter from "components/Common/withRouter";
 import TableContainer from "../../../components/Common/TableContainer";
@@ -38,6 +39,12 @@ import Spinners from "components/Common/Spinner";
 import { ToastContainer } from "react-toastify";
 
 const ContactsList = () => {
+
+  const navigate = useNavigate();
+
+const handleUserClicks = () => {
+  navigate('/new-contact');
+};
 
   //meta title
   document.title = "User List | Skote - React Admin & Dashboard Template";
@@ -167,12 +174,6 @@ const ContactsList = () => {
     setDeleteModal(false);
   };
 
-  const handleUserClicks = () => {
-    setContact("");
-    setIsEdit(false);
-    toggle();
-  };
-
   const columns = useMemo(
     () => [
       {
@@ -298,7 +299,7 @@ const ContactsList = () => {
                         isAddButton={true}
                         handleUserClick={handleUserClicks}
                         buttonClass="btn btn-success btn-rounded waves-effect waves-light addContact-modal mb-2"
-                        buttonName="New Contact"
+                        buttonName="Nouveau Contact"
                         tableClass="align-middle table-nowrap table-hover dt-responsive nowrap w-100 dataTable no-footer dtr-inline"
                         theadClass="table-light"
                         paginationWrapper="dataTables_paginate paging_simple_numbers pagination-rounded"

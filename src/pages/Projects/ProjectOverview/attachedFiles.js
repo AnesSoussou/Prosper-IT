@@ -1,10 +1,27 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import { Card, CardBody, CardTitle, Table, Button } from "reactstrap"
 import { Link } from "react-router-dom"
 
 const AttachedFiles = ({ files, onAddFile, onDeleteFile }) => {
   const [userRole, setUserRole] = useState(null)
+  const fileInputRef = useRef(null);
+  const handleAddFile = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const newFile = {
+        name: file.name,
+        size: `${(file.size / 1024).toFixed(2)} KB`,
+        link: URL.createObjectURL(file), // Crée un URL pour le fichier
+      };
+
+      onAddFile(newFile);
+    }
+  };
 
   useEffect(() => {
     const authUser = JSON.parse(localStorage.getItem("authUser"))
@@ -17,14 +34,15 @@ const AttachedFiles = ({ files, onAddFile, onDeleteFile }) => {
       <CardBody>
         <div className="d-flex justify-content-between align-items-center mb-4">
           <CardTitle>Documents</CardTitle>
-          <Button
-            color="primary"
-            btn
-            className="btn-rounded btn btn-info"
-            onClick={onAddFile}
-          >
+          <Button color="primary" className="btn-rounded" onClick={handleAddFile}>
             +
           </Button>
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            style={{ display: "none" }}
+          />
         </div>
 
         <div className="table-responsive">
@@ -78,7 +96,6 @@ const AttachedFiles = ({ files, onAddFile, onDeleteFile }) => {
 
 AttachedFiles.propTypes = {
   files: PropTypes.array,
-  onAddFile: PropTypes.func.isRequired,
   onDeleteFile: PropTypes.func.isRequired,
 }
 

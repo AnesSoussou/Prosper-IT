@@ -14,6 +14,7 @@ import {
   DELETE_PROJECT_FAIL,
   GET_PROJECT_DETAIL_FAIL,
   GET_PROJECT_DETAIL_SUCCESS,
+  ADD_FILE_TO_PROJECT
 } from "./actionTypes"
 
 export const getProjects = () => ({
@@ -89,3 +90,9 @@ export const getProjectDetailFail = error => ({
   type: GET_PROJECT_DETAIL_FAIL,
   payload: error,
 })
+
+export const addFileToProject = (projectId, newFile) => ({
+  type: ADD_FILE_TO_PROJECT,
+  payload: { projectId, newFile },
+});
+

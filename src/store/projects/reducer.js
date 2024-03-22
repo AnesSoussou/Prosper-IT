@@ -9,7 +9,8 @@ import {
   UPDATE_PROJECT_FAIL,
   DELETE_PROJECT_SUCCESS,
   DELETE_PROJECT_FAIL,
-  DELETE_PROJECT
+  DELETE_PROJECT,
+  ADD_FILE_TO_PROJECT
   
 } from "./actionTypes";
 
@@ -97,7 +98,14 @@ const projects = (state = INIT_STATE, action) => {
         ...state,
         error: action.payload,
       };
-
+      case ADD_FILE_TO_PROJECT:
+        return {
+          ...state,
+          projectDetail: {
+            ...state.projectDetail,
+            files: [...state.projectDetail.files, action.payload.newFile],
+          },
+        };
     default:
       return state;
   }

@@ -46,6 +46,11 @@ const ContactsGrid = () => {
   return (
     <React.Fragment>
       <div className="page-content">
+      <div className="text-center my-3">
+            <Link to="/contacts-list" className="btn btn-primary">
+              Voir la liste des contacts
+            </Link>
+          </div>
         <Container fluid>
           {/* Render Breadcrumbs */}
           <Breadcrumbs title="Contacts" breadcrumbItem="User Grid" />

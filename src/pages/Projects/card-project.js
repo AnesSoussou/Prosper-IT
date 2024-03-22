@@ -56,7 +56,7 @@ const CardProject = ({ projects, mode }) => {
                       {project.name}
                     </Link>
                   </h5>
-                  <p className="text-muted mb-4">{project.description}</p>
+                  {/* <p className="text-muted mb-4">{project.description}</p> */}
                 </div>
               </div>
             </CardBody>

@@ -8,6 +8,7 @@ import { Button, Col, Container, Row } from "reactstrap"
 import Breadcrumbs from "components/Common/Breadcrumb"
 
 import {
+  addFileToProject,
   deleteProject,
   getProjectsSuccess,
   getProjectDetail as onGetProjectDetail,
@@ -25,6 +26,13 @@ import ChantBox from "pages/Dashboard-saas/chat-box"
 
 const ProjectsOverview = props => {
   const [userRole, setUserRole] = useState(null)
+
+  const [files, setFiles] = useState([]);
+
+  const handleAddFile = (newFile) => {
+    // Assuming params.id is your project ID
+    dispatch(addFileToProject(params.id, newFile));
+  };
 
   useEffect(() => {
     const authUser = JSON.parse(localStorage.getItem("authUser"))
@@ -86,7 +94,8 @@ const ProjectsOverview = props => {
                 </Col>
 
                 <Col lg="4">
-                  <AttachedFiles files={projectDetail.files} />
+                  <AttachedFiles files={projectDetail.files}
+                 onAddFile={handleAddFile} />
                 </Col>
               </Row>
 

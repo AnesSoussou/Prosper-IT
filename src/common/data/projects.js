@@ -61,7 +61,7 @@ const projects = [
   {
     id: 9,
     img: companies01,
-    name: "Placement NASDAQ",
+    name: "AUTOMOBILE",
     description: "It will be as simple as Occidental",
     status: "Completed",
     color: "success",
@@ -133,7 +133,7 @@ const projects = [
   {
     id: 1,
     img: companies02,
-    name: "Assurance auto",
+    name: "MOTO",
     description: "To achieve it would be necessary",
     status: "Pending",
     color: "warning",
@@ -186,7 +186,7 @@ const projects = [
   {
     id: 2,
     img: companies03,
-    name: "Assurance immobilier",
+    name: "CARAVANE",
     description: "For science, music, sport, etc",
     status: "Delay",
     color: "danger",
@@ -239,7 +239,7 @@ const projects = [
   {
     id: 3,
     img: companies04,
-    name: "Assurance immobilier",
+    name: "QUAD",
     description: "If several languages coalesce",
     status: "Completed",
     color: "success",
@@ -293,7 +293,7 @@ const projects = [
   {
     id: 4,
     img: companies05,
-    name: "Assurance immobilier",
+    name: "JET-SKI",
     description: "Separate existence is a myth",
     status: "Completed",
     color: "success",
@@ -347,7 +347,7 @@ const projects = [
   {
     id: 5,
     img: companies06,
-    name: "Assurance immobilier",
+    name: "SCOOTER",
     description: "For science, music, sport, etc",
     status: "Pending",
     color: "warning",
@@ -400,7 +400,7 @@ const projects = [
   {
     id: 6,
     img: companies03,
-    name: "Assurance immobilier",
+    name: "TROTINETTE",
     description: "It will be as simple as Occidental",
     status: "Delay",
     color: "danger",
@@ -414,7 +414,7 @@ const projects = [
   {
     id: 7,
     img: companies04,
-    name: "Assurance immobilier",
+    name: "VÉHICULE SANS PERMIS",
     description: "To achieve it would be necessary",
     status: "Completed",
     color: "success",
@@ -467,7 +467,7 @@ const projects = [
   {
     id: 8,
     img: companies02,
-    name: "Assurance immobilier",
+    name: "TAXI",
     description: "Their most common words.",
     status: "Completed",
     color: "success",

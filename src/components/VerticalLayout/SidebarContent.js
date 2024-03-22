@@ -204,7 +204,7 @@ const SidebarContent = props => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tables-datatable">
+                  <Link to="/contacts-grid">
                     <i className="bx bxs-user-pin"></i>
                     <span>{props.t("Contacts")}</span>
                   </Link>

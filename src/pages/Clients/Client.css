@@ -1,0 +1,87 @@
+.input-mask {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  flex-grow: 1;
+}
+
+.input-mask:focus,
+.form-control.input-mask:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Client.css */
+.form-group {
+  display: flex;
+  align-items: center; /* Assure que les éléments soient alignés verticalement au centre */
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+  margin-bottom: 1rem; /* Espacement entre les FormGroup */
+  width: 100%; /* Assure que le FormGroup prend toute la largeur */
+}
+
+.form-group-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.form-group-inline .form-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-label {
+  min-width: 140px; /* Ajustez selon le besoin */
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Utilisez cette classe pour les champs qui doivent occuper toute la largeur */
+.full-width {
+  flex-basis: 100%;
+}
+
+.label-inline {
+  flex: 0 0 140px; 
+  margin-right: 1rem; 
+}
+.field-inline {
+  flex: 1;
+}
+
+.form-group-inline .form-field,
+.form-group-inline .input-mask,
+.form-group-inline .form-control {
+  width: calc(50% - 10px);
+}
+
+/* Pour les éléments côte à côte avec peu d'espace entre eux */
+.form-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}
+
+.input-mask, .form-control {
+  flex: 1; /* Les champs prennent l'espace restant */
+  width: auto; /* S'ajuste en fonction de l'espace disponible */
+}
+
+.form-custom-style {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}

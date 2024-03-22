@@ -104,9 +104,9 @@ import IconMaterialdesign from "../pages/Icons/IconMaterialdesign";
 import IconFontawesome from "../pages/Icons/IconFontawesome";
 
 //Tables
-import BasicTables from "../pages/Tables/BasicTables";
-import DatatableTables from "../pages/Tables/DatatableTables";
-import AddClient from "../pages/Tables/AddClient";
+import BasicTables from "../pages/Clients/BasicTables";
+import ClientsList from "../pages/Clients/ClientsList";
+import AddClient from "../pages/Clients/AddClient";
 
 //Blog
 import BlogList from "../pages/Blog/BlogList/index";
@@ -173,6 +173,7 @@ import ContactsGrid from "../pages/Contacts/contacts-grid";
 import ContactsList from "../pages/Contacts/ContactList/contacts-list";
 import ContactsProfile from "../pages/Contacts/ContactsProfile/contacts-profile";
 import Services from "pages/Projects/services";
+import NewContactForm from "pages/Contacts/ContactList/ContactForm";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
@@ -257,6 +258,7 @@ const authProtectedRoutes = [
   { path: "/contacts-grid", component: <ContactsGrid /> },
   { path: "/contacts-list", component: <ContactsList /> },
   { path: "/contacts-profile", component: <ContactsProfile /> },
+  { path: "/new-contact", component: <NewContactForm /> },
 
   //Charts
   { path: "/apex-charts", component: <ChartApex /> },
@@ -274,7 +276,7 @@ const authProtectedRoutes = [
 
   // Tables
   { path: "/tables-basic", component: <BasicTables /> },
-  { path: "/tables-datatable", component: <DatatableTables /> },
+  { path: "/tables-datatable", component: <ClientsList /> },
   { path: "/add-client", component: <AddClient /> },
 
   // Maps
