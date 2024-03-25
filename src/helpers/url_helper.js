@@ -99,6 +99,20 @@ export const ADD_NEW_USER = "/add/user";
 export const UPDATE_USER = "/update/user";
 export const DELETE_USER = "/delete/user";
 
+//CLIENTS
+export const GET_CLIENTS = "/clients";
+export const GET_CLIENT_PROFILE = "/client";
+export const ADD_NEW_CLIENT = "/clients";
+export const UPDATE_CLIENT = "/update/client";
+export const DELETE_CLIENT = "/delete/client";
+
+//PARTENAIRES
+export const GET_PARTENAIRES = "/partenaires";
+export const GET_PARTENAIRE_PROFILE = "/partenaire";
+export const ADD_NEW_PARTENAIRE = "/partenaires";
+export const UPDATE_PARTENAIRE = "/update/partenaire";
+export const DELETE_PARTENAIRE = "/delete/partenaire";
+
 //Blog
 export const GET_VISITOR_DATA = "/visitor-data";
 

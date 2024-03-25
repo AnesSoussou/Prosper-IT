@@ -24,11 +24,11 @@ import Breadcrumbs from "components/Common/Breadcrumb";
 import DeleteModal from "components/Common/DeleteModal";
 
 import {
-  getClients as onGetClients,
-  addNewClient as onAddNewClient,
-  updateClient as onUpdateClient,
-  deleteClient as onDeleteClient,
-} from "store/clients/actions";
+  getPartenaires as onGetPartenaires,
+  addNewPartenaire as onAddNewPartenaire,
+  updatePartenaire as onUpdatePartenaire,
+  deletePartenaire as onDeletePartenaire,
+} from "store/partenaires/actions";
 import { isEmpty } from "lodash";
 
 //redux
@@ -38,30 +38,30 @@ import Spinners from "components/Common/Spinner";
 import { ToastContainer } from "react-toastify";
 import TableContainer from "components/Common/TableContainer";
 
-const ClientsList = () => {
+const PartenairesList = () => {
 
   const navigate = useNavigate();
 
-const handleClientClicks = () => {
-  navigate('/add-client');
+const handlePartenaireClicks = () => {
+  navigate('/new-partenaire');
 };
 
   //meta title
-  document.title = "Client List | Skote - React Admin & Dashboard Template";
+  document.title = "Partenaire List | Skote - React Admin & Dashboard Template";
 
   const dispatch = useDispatch();
-  const [client, setClient] = useState();
+  const [partenaire, setPartenaire] = useState();
   // validation
   const validation = useFormik({
     // enableReinitialize : use this flag when initial values needs to be changed
     enableReinitialize: true,
 
     initialValues: {
-      name: (client && client.name) || "",
-      designation: (client && client.designation) || "",
-      tags: (client && client.tags) || "",
-      email: (client && client.email) || "",
-      projects: (client && client.projects) || "",
+      name: (partenaire && partenaire.name) || "",
+      designation: (partenaire && partenaire.designation) || "",
+      tags: (partenaire && partenaire.tags) || "",
+      email: (partenaire && partenaire.email) || "",
+      projects: (partenaire && partenaire.projects) || "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Please Enter Your Name"),
@@ -75,20 +75,20 @@ const handleClientClicks = () => {
     }),
     onSubmit: values => {
       if (isEdit) {
-        const updateClient = {
-          id: client.id,
+        const updatePartenaire = {
+          id: partenaire.id,
           name: values.name,
           designation: values.designation,
           tags: values.tags,
           email: values.email,
           projects: values.projects,
         };
-        // update client
-        dispatch(onUpdateClient(updateClient));
+        // update Partenaire
+        dispatch(onUpdatePartenaire(updatePartenaire));
         setIsEdit(false);
         validation.resetForm();
       } else {
-        const newClient = {
+        const newPartenaire = {
           id: Math.floor(Math.random() * (30 - 20)) + 20,
           name: values["name"],
           designation: values["designation"],
@@ -96,63 +96,63 @@ const handleClientClicks = () => {
           tags: values["tags"],
           projects: values["projects"],
         };
-        // save new Client
-        dispatch(onAddNewClient(newClient));
+        // save new Partenaire
+        dispatch(onAddNewPartenaire(newPartenaire));
         validation.resetForm();
       }
       toggle();
     },
   });
 
-  const ClientsProperties = createSelector(
-    (state) => state.clients,
-    (Clients) => ({
-      clients: Clients.clients,
-      loading: Clients.loading
+  const ContactsProperties = createSelector(
+    (state) => state.contacts,
+    (Contacts) => ({
+      partenaires: Contacts.partenaires,
+      loading: Contacts.loading
     })
   );
 
   const {
-    clients, loading
-  } = useSelector(ClientsProperties);
+    partenaires, loading
+  } = useSelector(ContactsProperties);
 
   const [modal, setModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [isLoading, setLoading] = useState(loading)
 
   useEffect(() => {
-    if (clients && !clients.length) {
-      dispatch(onGetClients());
+    if (partenaires && !partenaires.length) {
+      dispatch(onGetPartenaires());
       setIsEdit(false);
     }
-  }, [dispatch, clients]);
+  }, [dispatch, partenaires]);
 
   useEffect(() => {
-    setClient(clients);
+    setPartenaire(partenaires);
     setIsEdit(false);
-  }, [clients]);
+  }, [partenaires]);
 
   useEffect(() => {
-    if (!isEmpty(clients) && !!isEdit) {
-      setClient(clients);
+    if (!isEmpty(partenaires) && !!isEdit) {
+      setPartenaire(partenaires);
       setIsEdit(false);
     }
-  }, [clients]);
+  }, [partenaires]);
 
   const toggle = () => {
     setModal(!modal);
   };
 
-  const handleUserClick = arg => {
-    const client = arg;
+  const handlePartenaireClick = arg => {
+    const partenaire = arg;
 
-    setClient({
-      id: client.id,
-      name: client.name,
-      designation: client.designation,
-      email: client.email,
-      tags: client.tags,
-      projects: client.projects,
+    setPartenaire({
+      id: partenaire.id,
+      name: partenaire.name,
+      designation: partenaire.designation,
+      email: partenaire.email,
+      tags: partenaire.tags,
+      projects: partenaire.projects,
     });
     setIsEdit(true);
 
@@ -162,14 +162,14 @@ const handleClientClicks = () => {
   //delete customer
   const [deleteModal, setDeleteModal] = useState(false);
 
-  const onClickDelete = (clients) => {
-    setClient(clients.id);
+  const onClickDelete = (partenaires) => {
+    setPartenaire(partenaires.id);
     setDeleteModal(true);
   };
 
-  const handleDeleteClient = () => {
-    if (client && client.id) {
-      dispatch(onDeleteClient(client.id));
+  const handleDeletePartenaire = () => {
+    if (partenaire && partenaire.id) {
+      dispatch(onDeletePartenaire(partenaire.id));
     }
     setDeleteModal(false);
   };
@@ -249,17 +249,17 @@ const handleClientClicks = () => {
                 to="#"
                 className="text-success"
                 onClick={() => {
-                  const clientData = cellProps.row.original;
-                  handleUserClick(clientData);
+                  const partenaireData = cellProps.row.original;
+                  handlePartenaireClick(partenaireData);
                 }}
               >
-                {/* <i className="mdi mdi-pencil font-size-18" id="edittooltip" /> */}
+                <i className="mdi mdi-pencil font-size-18" id="edittooltip" />
               </Link>
               <Link
                 to="#"
                 className="text-danger"
                 onClick={() => {
-                  const clientData = cellProps.row.original; onClickDelete(clientData);
+                  const partenaireData = cellProps.row.original; onClickDelete(partenaireData);
                 }}>
                 <i className="mdi mdi-delete font-size-18" id="deletetooltip" />
               </Link>
@@ -275,13 +275,13 @@ const handleClientClicks = () => {
     <React.Fragment>
       <DeleteModal
         show={deleteModal}
-        onDeleteClick={handleDeleteClient}
+        onDeleteClick={handleDeletePartenaire}
         onCloseClick={() => setDeleteModal(false)}
       />
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="Clients" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Partenaires" />
           <Row>
             {
               isLoading ? <Spinners setLoading={setLoading} />
@@ -291,15 +291,15 @@ const handleClientClicks = () => {
                     <CardBody>
                       <TableContainer
                         columns={columns}
-                        data={clients || []}
+                        data={partenaires || []}
                         isGlobalFilter={true}
                         isPagination={true}
                         SearchPlaceholder="Search..."
                         isCustomPageSize={true}
                         isAddButton={true}
-                        handleUserClick={handleClientClicks}
+                        handleUserClick={handlePartenaireClicks}
                         buttonClass="btn btn-success btn-rounded waves-effect waves-light addContact-modal mb-2"
-                        buttonName="Nouveau Client"
+                        buttonName="Nouveau Partenaire"
                         tableClass="align-middle table-nowrap table-hover dt-responsive nowrap w-100 dataTable no-footer dtr-inline"
                         theadClass="table-light"
                         paginationWrapper="dataTables_paginate paging_simple_numbers pagination-rounded"
@@ -312,7 +312,7 @@ const handleClientClicks = () => {
 
             <Modal isOpen={modal} toggle={toggle}>
               <ModalHeader toggle={toggle} tag="h4">
-                {!!isEdit ? "Edit Client" : "Add Client"}
+                {!!isEdit ? "Edit partenaire" : "Add partenaire"}
               </ModalHeader>
               <ModalBody>
                 <Form
@@ -460,7 +460,7 @@ const handleClientClicks = () => {
                       <div className="text-end">
                         <button
                           type="submit"
-                          className="btn btn-success save-client"
+                          className="btn btn-success save-user"
                         >
                           Save
                         </button>
@@ -478,5 +478,4 @@ const handleClientClicks = () => {
   );
 };
 
-export default withRouter(ClientsList);
-
+export default withRouter(PartenairesList);

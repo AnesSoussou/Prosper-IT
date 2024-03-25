@@ -123,7 +123,7 @@ const Header = props => {
 
           </div>
           <div className="d-flex">
-            <div className="dropdown d-inline-block d-lg-none ms-2">
+            {/* <div className="dropdown d-inline-block d-lg-none ms-2">
               <button
                 onClick={() => {
                   setsearch(!search);
@@ -160,11 +160,11 @@ const Header = props => {
                   </div>
                 </form>
               </div>
-            </div>
+            </div> */}
 
            
 
-            <div className="dropdown d-none d-lg-inline-block ms-1">
+            {/* <div className="dropdown d-none d-lg-inline-block ms-1">
               <button
                 type="button"
                 onClick={() => {
@@ -175,9 +175,9 @@ const Header = props => {
               >
                 <i className="bx bx-fullscreen" />
               </button>
-            </div>
+            </div> */}
 
-            <NotificationDropdown />
+            {/* <NotificationDropdown /> */}
             <ProfileMenu />
 
             <div

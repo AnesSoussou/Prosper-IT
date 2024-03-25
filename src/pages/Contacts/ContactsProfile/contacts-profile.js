@@ -24,12 +24,21 @@ import MiniCards from "./mini-card"
 // import charts
 import { getUserProfile } from "store/actions"
 import AssociatedFiles from "pages/DashboardJob/AssociatedJobs"
+import AssociatedContacts from "pages/DashboardJob/AssociatedContacts"
 
 const ContactsProfile = props => {
   //meta title
   document.title = "Profile | Prosper iT"
 
   const { userProfile, onGetUserProfile } = props
+
+  const [userRole, setUserRole] = useState(null)
+
+  useEffect(() => {
+    const authUser = JSON.parse(localStorage.getItem("authUser"))
+    const role = authUser ? authUser.role : null
+    setUserRole(role)
+  }, [])
 
   // eslint-disable-next-line no-unused-vars
   const [miniCards, setMiniCards] = useState([
@@ -98,6 +107,11 @@ const ContactsProfile = props => {
               <Card>
                 <AssociatedFiles />
               </Card>
+              {userRole === "admin" && (
+                <Card>
+                  <AssociatedContacts />
+                </Card>
+              )}
             </Col>
 
             <Col xl="8">
@@ -122,9 +136,7 @@ const ContactsProfile = props => {
               <Card>
                 <CardBody>
                   <div style={{ position: "relative" }}>
-                    <CardTitle className="mb-4">
-                      Coordonnées
-                    </CardTitle>
+                    <CardTitle className="mb-4">Coordonnées</CardTitle>
                     <Button
                       color="primary"
                       className="btn btn-soft-secondary waves-effect waves-light btn btn-secondary"

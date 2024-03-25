@@ -32,7 +32,7 @@ const AssociatedFiles = () => {
       <Col className="mb-4">
         <CardBody>
           <h4 className="card-title mb-4">Dossiers</h4>
-          <SimpleBar style={{ maxHeight: "376px" }}>
+          <SimpleBar style={{ maxHeight: userRole === "admin" ? "180px" : "364px", overflowY: "auto" }}>
             <div className="vstack gap-4">
               {(recentAddedJobsData || [])?.map((job, index) => (
                 <div className="d-flex" key={index}>

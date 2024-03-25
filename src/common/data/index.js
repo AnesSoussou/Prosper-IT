@@ -18,7 +18,7 @@ import {
 } from "./ecommerce";
 import { chats, contacts, groups, messages } from "./chat";
 import { calenderDefaultCategories, events } from "./calender";
-import { users, userProfile } from "./contacts";
+import { users, client, userProfile } from "./contacts";
 import { yearData, monthData, weekData, latestTransaction, activityDataDashboard, TopCitiesSelling } from "./dashboard";
 import { myfiles, recentfile, filesData, filemanagerData, storageData } from "./file-manager";
 
@@ -87,6 +87,7 @@ export {
   recentTasksData,
   AddTeamMember,
   users,
+  client,
   userProfile,
   yearData,
   monthData,

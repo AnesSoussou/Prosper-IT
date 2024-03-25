@@ -223,6 +223,33 @@ export const updateUser = user => put(url.UPDATE_USER, user);
 // delete user
 export const deleteUser = user => del(url.DELETE_USER, { headers: { user } });
 
+// get client
+export const getClientsApi = () => get(url.GET_CLIENTS);
+
+// add client
+export const addNewClientApi = client => post(url.ADD_NEW_CLIENT, client);
+
+// update client
+export const updateClientApi = client => put(url.UPDATE_CLIENT, client);
+
+// delete client
+export const deleteClientApi = client => del(url.DELETE_CLIENT, { headers: { client } });
+
+// get Partenaire
+export const getPartenaires = () => get(url.GET_PARTENAIRES);
+
+// add Partenaire
+export const addNewPartenaire = partenaire => post(url.ADD_NEW_PARTENAIRE, partenaire);
+
+// update Partenaire
+export const updatePartenaire = partenaire => put(url.UPDATE_PARTENAIRE, partenaire);
+
+// delete Partenaire
+export const deletePartenaire = partenaire => del(url.DELETE_PARTENAIRE, { headers: { partenaire } });
+
+// get PartenaireProfile
+export const getPartenaireProfile = () => get(url.GET_PARTENAIRE_PROFILE);
+
 // add jobs
 export const addNewJobList = job => post(url.ADD_NEW_JOB_LIST, job);
 

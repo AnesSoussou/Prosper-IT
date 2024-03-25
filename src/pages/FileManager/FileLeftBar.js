@@ -26,7 +26,7 @@ const FileRightBar = () => {
               <div className="mb-3">
                 <UncontrolledDropdown>
                   <DropdownToggle className="btn btn-light w-100" type="button">
-                    <i className="mdi mdi-plus me-1"></i> Create New
+                    <i className="mdi mdi-plus me-1"></i> Créer Nouveau
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem href="#"><i className="bx bx-folder me-1"></i> Folder</DropdownItem>

@@ -281,7 +281,7 @@ const handleUserClicks = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Prosper iT" breadcrumbItem="User List" />
+          <Breadcrumbs title="Prosper iT" breadcrumbItem="Contacts" />
           <Row>
             {
               isLoading ? <Spinners setLoading={setLoading} />

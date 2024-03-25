@@ -175,6 +175,10 @@ import ContactsProfile from "../pages/Contacts/ContactsProfile/contacts-profile"
 import Services from "pages/Projects/services";
 import NewContactForm from "pages/Contacts/ContactList/ContactForm";
 
+//Partenaires
+import PartenaireList from "pages/Partenaires/partenaireList";
+import PartenaireForm from "pages/Partenaires/PartenaireForm";
+
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
   { path: "/dashboard-saas", component: <DashboardSaas /> },
@@ -259,6 +263,12 @@ const authProtectedRoutes = [
   { path: "/contacts-list", component: <ContactsList /> },
   { path: "/contacts-profile", component: <ContactsProfile /> },
   { path: "/new-contact", component: <NewContactForm /> },
+
+  // Partenaires
+  { path: "/partenaires", component: <PartenaireList /> },
+  // { path: "/contacts-list", component: <ContactsList /> },
+  // { path: "/contacts-profile", component: <ContactsProfile /> },
+  { path: "/new-partenaire", component: <PartenaireForm /> },
 
   //Charts
   { path: "/apex-charts", component: <ChartApex /> },

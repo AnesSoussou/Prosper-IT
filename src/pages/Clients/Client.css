@@ -5,12 +5,6 @@
   flex-grow: 1;
 }
 
-.input-mask:focus,
-.form-control.input-mask:focus {
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
 
 /* Client.css */
 .form-group {
@@ -33,11 +27,6 @@
   justify-content: space-between;
 }
 
-.form-label {
-  min-width: 140px; /* Ajustez selon le besoin */
-  max-width: 100%;
-  margin-bottom: 0.5rem;
-}
 
 /* Utilisez cette classe pour les champs qui doivent occuper toute la largeur */
 .full-width {
@@ -46,7 +35,7 @@
 
 .label-inline {
   flex: 0 0 140px; 
-  margin-right: 1rem; 
+  margin-right: 3rem; 
 }
 .field-inline {
   flex: 1;
@@ -76,12 +65,41 @@
   color: #dc3545;
 }
 
+
 .input-mask, .form-control {
-  flex: 1; /* Les champs prennent l'espace restant */
-  width: auto; /* S'ajuste en fonction de l'espace disponible */
+  flex: 1;
+  width: auto; 
+  border: 2px solid #ced4da;
+}
+
+.input-mask:focus, .form-control:focus {
+  border-color: #66afe9;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.form-label {
+  color: #333;
+}
+
+.form-control.input-mask:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .form-custom-style {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* Dans AddClient.css */
+.addClientContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-inline: 30px;
+  margin-bottom: 120px;
 }

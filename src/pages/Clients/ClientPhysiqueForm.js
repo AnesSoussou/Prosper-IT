@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react"
 import { Form, FormGroup, Label, Input, Button } from "reactstrap"
 import "./Client.css"
+import { addNewClient } from "store/actions"
+import { useDispatch } from "react-redux"
+import { useNavigate } from 'react-router-dom';
 
-const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
+
+const ClientPhysiqueForm = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [userRole, setUserRole] = useState(null)
   const [formData, setFormData] = useState({
     numeroClient: "",
     sourceContact: "",
     abonne: "",
     titre: "",
-    nom: "",
+    name: "",
     prenom: "",
     nomJeuneFille: "",
     dateNaissance: "",
@@ -24,7 +31,7 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
     telephonePersonnel: "",
     telephoneProfessionnel: "",
     emailPersonnel: "",
-    emailProfessionnel: "",
+    email: "",
     decede: "",
     clientsDe: [],
     liensAvecContacts: "",
@@ -47,12 +54,33 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
     setUserRole(role)
   }, [])
 
+  const calculateAge = (dateOfBirth) => {
+    const birthday = new Date(dateOfBirth);
+    const today = new Date();
+    let age = today.getFullYear() - birthday.getFullYear();
+    const m = today.getMonth() - birthday.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+      age--;
+    }
+    return age;
+  };
+  
+
   const handleChange = e => {
     const { name, value } = e.target
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }))
+    if (name === "dateNaissance") {
+      const ageCalculated = calculateAge(value)
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: value,
+        age: ageCalculated.toString(),
+      }))
+    } else {
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: value,
+      }))
+    }
   }
 
   const handleChangeCheckbox = id => {
@@ -67,10 +95,14 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
   }
 
   const handleSubmit = e => {
-    e.preventDefault()
-    onAjouterClient(formData)
-    onSubmitSuccess()
-  }
+    e.preventDefault();
+    const clientToAdd = {
+      ...formData,
+      id: Math.floor(Math.random() * 10000)
+    };
+    dispatch(addNewClient(clientToAdd));
+    navigate('/tables-datatable'); 
+  };
 
   return (
     <Form onSubmit={handleSubmit} className="form-custom-style">
@@ -146,11 +178,11 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
           Nom
         </Label>
         <Input
-          id="nom"
-          name="nom"
+          id="name"
+          name="name"
           type="text"
           className="input-mask"
-          value={formData.nom}
+          value={formData.name}
           onChange={handleChange}
         />
       </FormGroup>
@@ -193,6 +225,20 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
           className="input-mask"
           value={formData.dateNaissance}
           onChange={handleChange}
+        />
+      </FormGroup>
+
+      <FormGroup className="form-group">
+        <Label for="age" className="label-inline">
+          Âge
+        </Label>
+        <Input
+          id="age"
+          name="age"
+          type="text"
+          className="input-mask"
+          value={formData.age || ""}
+          disabled={true}
         />
       </FormGroup>
 
@@ -341,15 +387,15 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
       </FormGroup>
 
       <FormGroup className="form-group">
-        <Label for="emailProfessionnel" className="label-inline">
+        <Label for="email" className="label-inline">
           Email professionnel
         </Label>
         <Input
-          id="emailProfessionnel"
-          name="emailProfessionnel"
+          id="email"
+          name="email"
           type="email"
           className="input-mask"
-          value={formData.emailProfessionnel}
+          value={formData.email}
           onChange={handleChange}
         />
       </FormGroup>
@@ -488,6 +534,35 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
             </Label>
           </FormGroup>
         </div>
+      </FormGroup>
+
+      <FormGroup className="form-group">
+        <Label for="liensAvecContacts" className="label-inline">
+          Liens avec contacts
+        </Label>
+        <Input
+          id="liensAvecContacts"
+          name="liensAvecContacts"
+          type="search"
+          className="input-mask"
+          placeholder="Recherchez un contact..."
+          value={formData.liensAvecContacts}
+          onChange={handleChange}
+        />
+      </FormGroup>
+      <FormGroup className="form-group">
+        <Label for="liensAvecSociete" className="label-inline">
+          Liens avec société
+        </Label>
+        <Input
+          id="liensAvecSociete"
+          name="liensAvecSociete"
+          type="search"
+          className="input-mask"
+          placeholder="Recherchez une société..."
+          value={formData.liensAvecSociete}
+          onChange={handleChange}
+        />
       </FormGroup>
       <FormGroup className="form-group">
         <Label for="situationParticuliere" className="label-inline">
@@ -642,7 +717,6 @@ const ClientPhysiqueForm = ({ onAjouterClient, onSubmitSuccess }) => {
       <Button
         type="submit"
         style={{
-          marginBottom: "100px",
           backgroundColor: "#007bff",
           borderColor: "#007bff",
           color: "white",

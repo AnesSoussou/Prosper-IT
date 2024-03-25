@@ -2,8 +2,14 @@ import React, { useState } from "react"
 import { Form, FormGroup, Label, Input, Button } from "reactstrap"
 import InputMask from "react-input-mask"
 import "./Client.css"
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { addNewClient } from "store/actions"
 
-const ClientMoralForm = ({ onAjouterClient, onSubmitSuccess}) => {
+const ClientMoralForm = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     numeroClient: "",
     sourceContact: "",
@@ -18,7 +24,7 @@ const ClientMoralForm = ({ onAjouterClient, onSubmitSuccess}) => {
     adresseCodePostal: "",
     adresseVille: "",
     telephoneProfessionnel: "",
-    emailProfessionnel: "",
+    email: "",
     clientsDe: [],
     liensAvecContacts: "",
     liensAvecSociete: "",
@@ -57,10 +63,14 @@ const ClientMoralForm = ({ onAjouterClient, onSubmitSuccess}) => {
   };
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    onAjouterClient(formData);
-    onSubmitSuccess();
+    const clientToAdd = {
+      ...formData,
+      id: Math.floor(Math.random() * 10000)
+    };
+    dispatch(addNewClient(clientToAdd));
+    navigate('/tables-datatable'); 
   };
   
 
@@ -265,12 +275,12 @@ const ClientMoralForm = ({ onAjouterClient, onSubmitSuccess}) => {
         </InputMask>
       </FormGroup>
       <FormGroup className="form-group">
-        <Label for="emailProfessionnel" className="label-inline">Email professionnel</Label>
+        <Label for="email" className="label-inline">Email professionnel</Label>
         <Input
-          id="emailProfessionnel"
-          name="emailProfessionnel"
+          id="email"
+          name="email"
           type="email"
-          value={formData.emailProfessionnel}
+          value={formData.email}
           onChange={handleChange}
           className={`input-mask ${isEmailValid ? "" : "is-invalid"}`}
         />
@@ -358,7 +368,6 @@ const ClientMoralForm = ({ onAjouterClient, onSubmitSuccess}) => {
       <Button
         type="submit"
         style={{
-          marginBottom: "100px",
           backgroundColor: "#007bff",
           borderColor: "#007bff",
           color: "white",

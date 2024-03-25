@@ -1,28 +1,22 @@
 // Dans AddClient.js
 import React, { useState } from "react"
-import { FormGroup, Label, Input, Form } from "reactstrap"
+import { FormGroup, Label, Input, Form, Container } from "reactstrap"
 import ClientPhysiqueForm from "./ClientPhysiqueForm"
 import ClientMoralForm from "./ClientMoralForm"
+import Breadcrumb from "components/Common/Breadcrumb"
 import "./Client.css"
 
-const AddClient = ({ onAjouterClient, onShowClientList  }) => {
-
-  const handleSubmitSuccess = () => {
-    onShowClientList();
-  };
-  
+const AddClient = () => {
   // Assurez-vous d'ajouter la prop ici
-  const [clientType, setClientType] = useState("")
+  const [clientType, setClientType] = useState("physique")
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        marginTop: "80px",
-        marginInline: "50px",
-      }}
-    >
+    <div className="page-content">
+      <Container fluid>
+      <Breadcrumb title="Prosper iT" breadcrumbItem="Ajout Client" />
+    
+    <div className="addClientContainer">
+
       <Form>
         <FormGroup className="form-group">
           <Label for="clientTypeSelect" className="label-inline">
@@ -42,12 +36,10 @@ const AddClient = ({ onAjouterClient, onShowClientList  }) => {
           </Input>
         </FormGroup>
       </Form>
-      {clientType === "physique" && (
-        <ClientPhysiqueForm onAjouterClient={onAjouterClient} onSubmitSuccess={handleSubmitSuccess} />
-      )}
-      {clientType === "moral" && (
-        <ClientMoralForm onAjouterClient={onAjouterClient} onSubmitSuccess={handleSubmitSuccess} />
-      )}
+      {clientType === "physique" && <ClientPhysiqueForm />}
+      {clientType === "moral" && <ClientMoralForm />}
+    </div>
+    </Container>
     </div>
   )
 }

@@ -36,6 +36,12 @@ import tasks from "./tasks/reducer";
 //contacts
 import contacts from "./contacts/reducer";
 
+//clients
+import clients from "./clients/reducer";
+
+//partenaires
+import partenaires from "./partenaires/reducer";
+
 //mails
 import mails from "./mails/reducer";
 
@@ -71,6 +77,8 @@ const rootReducer = combineReducers({
   projects,
   tasks,
   contacts,
+  clients,
+  partenaires,
   Dashboard,
   DashboardSaas,
   DashboardCrypto,

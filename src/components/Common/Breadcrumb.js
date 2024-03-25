@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import { Link } from "react-router-dom"
-import { Row, Col, BreadcrumbItem, Button } from "reactstrap"
+import { Row, Col} from "reactstrap"
 
 const Breadcrumb = ({
   breadcrumbItem,
-  title,
   children,
-  onAddFolderClick,
-  showAddFolderButton,
 }) => {
   const [userRole, setUserRole] = useState(null)
 
@@ -23,14 +19,6 @@ const Breadcrumb = ({
     <div className="page-title-box d-flex align-items-center" style={{ gap: '20px' }}>
       {/* Titre */}
       <h4 className="font-size-18 mr-2" style={{ marginBottom: 0 }}>{breadcrumbItem}</h4>
-      
-      {/* Bouton "Ajouter un dossier", affiché uniquement pour les admins */}
-      {showAddFolderButton && userRole === "admin" && (
-        <Button color="primary" onClick={onAddFolderClick} style={{ whiteSpace: 'nowrap' }}>
-          Ajouter un dossier
-        </Button>
-      )}
-      
       {/* Barre de recherche, affichée à côté du titre et du bouton */}
       <div style={{ flex: 1, maxWidth: '600px' }}>
         {children}

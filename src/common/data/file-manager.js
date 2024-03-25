@@ -123,14 +123,14 @@ const filesData = [
 ];
 
 const filemanagerData = [
-  {
-    icon: "mdi mdi-google-drive font-size-16 text-muted me-2",
-    text: "Google Drive",
-  },
-  {
-    icon: "mdi mdi-dropbox font-size-16 me-2 text-primary",
-    text: "Dropbox",
-  },
+  // {
+  //   icon: "mdi mdi-google-drive font-size-16 text-muted me-2",
+  //   text: "Google Drive",
+  // },
+  // {
+  //   icon: "mdi mdi-dropbox font-size-16 me-2 text-primary",
+  //   text: "Dropbox",
+  // },
   {
     icon: "mdi mdi-share-variant font-size-16 me-2",
     text: "Shared",
@@ -144,11 +144,11 @@ const filemanagerData = [
     icon: "mdi mdi-trash-can text-danger font-size-16 me-2",
     text: "Trash",
   },
-  {
-    icon: "mdi mdi-cog text-muted font-size-16 me-2",
-    text: "Setting",
-    badge: true
-  }
+  // {
+  //   icon: "mdi mdi-cog text-muted font-size-16 me-2",
+  //   text: "Setting",
+  //   badge: true
+  // }
 ]
 
 const storageData = [

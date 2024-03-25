@@ -36,6 +36,12 @@ export * from "./contacts/actions";
 // contacts
 export * from "./mails/actions";
 
+// clients
+export * from "./clients/actions";
+
+// partenaires
+export * from "./partenaires/actions";
+
 //dashboard
 export * from "./dashboard/actions";
 

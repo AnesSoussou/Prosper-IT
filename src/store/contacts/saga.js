@@ -63,15 +63,30 @@ function* onDeleteUser({ payload: user }) {
   }
 }
 
-function* onAddNewUser({ payload: user }) {
+// function* onAddNewUser({ payload: user }) {
 
+//   try {
+//     const response = yield call(addNewUser, user)
+//     yield put(addUserSuccess(response))
+//     toast.success("Contact Added Successfully", { autoClose: 2000 });
+//   } catch (error) {
+//     yield put(addUserFail(error))
+//     toast.error("Contact Added Failed", { autoClose: 2000 });
+//   }
+// }
+
+function* onAddNewUser({ payload: user }) {
   try {
-    const response = yield call(addNewUser, user)
-    yield put(addUserSuccess(response))
-    toast.success("Contact Added Successfully", { autoClose: 2000 });
+    // Simuler l'ajout d'un user sans appel API
+    // Supposons que le `user` est l'objet à ajouter
+    // Vous pouvez ajouter un ID ou d'autres transformations nécessaires ici
+    const simulatedResponse = { ...user, id: Date.now() }; // Ajouter un ID simulé
+
+    yield put(addUserSuccess(simulatedResponse));
+    toast.success("User added successfully", { autoClose: 2000 });
   } catch (error) {
-    yield put(addUserFail(error))
-    toast.error("Contact Added Failed", { autoClose: 2000 });
+    yield put(addUserFail(error));
+    toast.error("Adding user failed", { autoClose: 2000 });
   }
 }
 

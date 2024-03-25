@@ -198,13 +198,13 @@ const SidebarContent = props => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/tables-datatable">
+                  <Link to="/partenaires">
                     <i className="mdi mdi-handshake"></i>
-                    <span>{props.t("Prestataires")}</span>
+                    <span>{props.t("Partenaires")}</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contacts-grid">
+                  <Link to="/contacts-list">
                     <i className="bx bxs-user-pin"></i>
                     <span>{props.t("Contacts")}</span>
                   </Link>
